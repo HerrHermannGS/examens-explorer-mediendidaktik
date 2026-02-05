@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examens-Explorer Mediendidaktik</title>
+    <style>
+        :root {
+            --primary: #007bff;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --bg-light: #f8f9fa;
+            --dark: #212529;
+            --border-radius: 8px;
+            --shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--bg-light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        body.dark-mode {
+            --bg-light: #1a1a1a;
+            --dark: #e0e0e0;
+            background: #1a1a1a;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .card {
+            background: #2d2d2d;
+            border-color: #444;
+        }
+
+        body.dark-mode .filter-bar {
+            background: #2d2d2d;
+            border-color: #444;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 20px 0;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        header h1 {
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        header p {
+            text-align: center;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        .filter-bar {
+            position: sticky;
+            top: 0;
+            background: white;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+            z-index: 100;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filter-group input,
+        .filter-group select {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .filter-group button {
+            padding: 8px 16px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        .filter-group button:hover {
+            background: #0056b3;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        body.dark-mode .stat-card {
+            background: #2d2d2d;
+        }
+
+        .stat-card h3 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        body.dark-mode .stat-card p {
+            color: #999;
+        }
+
+        .cards-container {
+            display: grid;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-left: 4px solid var(--primary);
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .card-meta {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .badge.afb-1 { background: var(--success); color: white; }
+        .badge.afb-2 { background: var(--warning); color: black; }
+        .badge.afb-3 { background: var(--danger); color: white; }
+        .badge.semester { background: var(--primary); color: white; }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin: 10px 0;
+        }
+
+        .tag {
+            background: #e9ecef;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: #495057;
+        }
+
+        body.dark-mode .tag {
+            background: #444;
+            color: #ccc;
+        }
+
+        .tag.kategorie-1 { border-left: 3px solid #28a745; }
+        .tag.kategorie-2 { border-left: 3px solid #9b59b6; }
+        .tag.kategorie-3 { border-left: 3px solid #3498db; }
+        .tag.kategorie-4 { border-left: 3px solid #f39c12; }
+
+        .citation {
+            background: #f8f9fa;
+            border-left: 3px solid var(--primary);
+            padding: 10px;
+            margin: 10px 0;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        body.dark-mode .citation {
+            background: #333;
+        }
+
+        .citation-author {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 5px;
+            font-style: normal;
+        }
+
+        .volltext {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+            display: none;
+            font-family: Consolas, monospace;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .volltext.visible {
+            display: block;
+        }
+
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+            font-size: 0.9rem;
+            text-decoration: underline;
+            padding: 5px 0;
+        }
+
+        .toggle-btn:hover {
+            color: #0056b3;
+        }
+
+        .dark-mode-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .dark-mode-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .chart-container {
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        body.dark-mode .chart-container {
+            background: #2d2d2d;
+        }
+
+        canvas {
+            max-height: 400px;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .filter-group {
+                flex-direction: column;
+            }
+
+            .filter-group input,
+            .filter-group select {
+                width: 100%;
+            }
+
+            .card-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>📚 Examens-Explorer Mediendidaktik</h1>
+            <p>44 Examensaufgaben 2015-2025 · Durchsuchbar · Filterbar · Offline-fähig</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <div class="filter-group">
+                <input type="text" id="searchInput" placeholder="🔍 Volltextsuche...">
+                <select id="filterSemester">
+                    <option value="">Alle Semester</option>
+                </select>
+                <select id="filterAFB">
+                    <option value="">Alle AFB-Level</option>
+                    <option value="AFB I">AFB I (Reproduktion)</option>
+                    <option value="AFB II">AFB II (Transfer)</option>
+                    <option value="AFB III">AFB III (Reflexion)</option>
+                </select>
+                <select id="filterThema">
+                    <option value="">Alle Themen</option>
+                </select>
+                <button id="resetBtn">↻ Reset</button>
+            </div>
+        </div>
+
+        <!-- Statistiken -->
+        <div class="stats">
+            <div class="stat-card">
+                <h3 id="totalCount">0</h3>
+                <p>Aufgaben gesamt</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="visibleCount">0</h3>
+                <p>Sichtbare Aufgaben</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="semesterCount">0</h3>
+                <p>Semester (2015-2025)</p>
+            </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="chart-container">
+            <h2>📊 Top 10 Themen</h2>
+            <canvas id="themenChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h2>📈 AFB-Verteilung</h2>
+            <canvas id="afbChart"></canvas>
+        </div>
+
+        <!-- Aufgaben Cards -->
+        <div class="cards-container" id="cardsContainer">
+            <!-- Wird dynamisch gefüllt -->
+        </div>
+
+        <div id="noResults" class="no-results" style="display: none;">
+            Keine Aufgaben gefunden. Versuche andere Filter!
+        </div>
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <button class="dark-mode-toggle" id="darkModeToggle" title="Dark Mode umschalten">🌙</button>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+    <script>
+        // Eingebettete Daten (wird beim Build ersetzt)
+        const AUFGABEN_DATA = /* PLACEHOLDER_DATA */;
+
+        // State
+        let aufgaben = [];
+        let filteredAufgaben = [];
+        let themenChart = null;
+        let afbChart = null;
+
+        // Initialisierung
+        document.addEventListener('DOMContentLoaded', () => {
+            loadData();
+            setupEventListeners();
+            loadDarkMode();
+        });
+
+        function loadData() {
+            // Lade Daten (später aus JSON)
+            fetch('aufgaben_parsed.json')
+                .then(response => response.json())
+                .then(data => {
+                    aufgaben = data;
+                    filteredAufgaben = aufgaben;
+                    populateFilters();
+                    renderCards();
+                    updateStats();
+                    renderCharts();
+                })
+                .catch(error => {
+                    console.error('Fehler beim Laden:', error);
+                    // Fallback: Nutze eingebettete Daten wenn vorhanden
+                    if (typeof AUFGABEN_DATA !== 'undefined' && AUFGABEN_DATA.length > 0) {
+                        aufgaben = AUFGABEN_DATA;
+                        filteredAufgaben = aufgaben;
+                        populateFilters();
+                        renderCards();
+                        updateStats();
+                        renderCharts();
+                    }
+                });
+        }
+
+        function populateFilters() {
+            // Semester-Filter
+            const semesters = [...new Set(aufgaben.map(a => a.semester))].sort().reverse();
+            const semesterSelect = document.getElementById('filterSemester');
+            semesters.forEach(sem => {
+                const option = document.createElement('option');
+                option.value = sem;
+                option.textContent = sem;
+                semesterSelect.appendChild(option);
+            });
+
+            // Themen-Filter (alle Themen aus allen Kategorien)
+            const allThemen = new Set();
+            aufgaben.forEach(aufgabe => {
+                Object.values(aufgabe.themen).forEach(themenListe => {
+                    themenListe.forEach(thema => allThemen.add(thema));
+                });
+            });
+            const themaSelect = document.getElementById('filterThema');
+            [...allThemen].sort().forEach(thema => {
+                const option = document.createElement('option');
+                option.value = thema;
+                option.textContent = thema;
+                themaSelect.appendChild(option);
+            });
+        }
+
+        function setupEventListeners() {
+            document.getElementById('searchInput').addEventListener('input', applyFilters);
+            document.getElementById('filterSemester').addEventListener('change', applyFilters);
+            document.getElementById('filterAFB').addEventListener('change', applyFilters);
+            document.getElementById('filterThema').addEventListener('change', applyFilters);
+            document.getElementById('resetBtn').addEventListener('click', resetFilters);
+            document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
+        }
+
+        function applyFilters() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const semesterFilter = document.getElementById('filterSemester').value;
+            const afbFilter = document.getElementById('filterAFB').value;
+            const themaFilter = document.getElementById('filterThema').value;
+
+            filteredAufgaben = aufgaben.filter(aufgabe => {
+                // Volltextsuche
+                const matchesSearch = !searchTerm ||
+                    aufgabe.volltext.toLowerCase().includes(searchTerm) ||
+                    aufgabe.semester.toLowerCase().includes(searchTerm);
+
+                // Semester-Filter
+                const matchesSemester = !semesterFilter || aufgabe.semester === semesterFilter;
+
+                // AFB-Filter
+                const matchesAFB = !afbFilter ||
+                    (aufgabe.operatoren[afbFilter] && aufgabe.operatoren[afbFilter].length > 0);
+
+                // Themen-Filter
+                const matchesThema = !themaFilter ||
+                    Object.values(aufgabe.themen).some(liste => liste.includes(themaFilter));
+
+                return matchesSearch && matchesSemester && matchesAFB && matchesThema;
+            });
+
+            renderCards();
+            updateStats();
+        }
+
+        function resetFilters() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('filterSemester').value = '';
+            document.getElementById('filterAFB').value = '';
+            document.getElementById('filterThema').value = '';
+            applyFilters();
+        }
+
+        function renderCards() {
+            const container = document.getElementById('cardsContainer');
+            const noResults = document.getElementById('noResults');
+
+            if (filteredAufgaben.length === 0) {
+                container.innerHTML = '';
+                noResults.style.display = 'block';
+                return;
+            }
+
+            noResults.style.display = 'none';
+            container.innerHTML = filteredAufgaben.map(aufgabe => createCard(aufgabe)).join('');
+
+            // Event Listeners für Toggle-Buttons
+            document.querySelectorAll('.toggle-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const cardId = e.target.dataset.cardId;
+                    const volltext = document.getElementById(`volltext-${cardId}`);
+                    volltext.classList.toggle('visible');
+                    e.target.textContent = volltext.classList.contains('visible') ?
+                        '▲ Volltext verbergen' : '▼ Volltext anzeigen';
+                });
+            });
+        }
+
+        function createCard(aufgabe) {
+            const kategorieTags = [];
+            const kategorieMap = {
+                'Mediendidaktische Konzepte': 1,
+                'Lehr-Lerntheorien': 2,
+                'Lernpsychologie': 3,
+                'Spezifische Medien/Formate': 4
+            };
+
+            Object.entries(aufgabe.themen).forEach(([kategorie, themen]) => {
+                themen.forEach(thema => {
+                    const kategorieNum = kategorieMap[kategorie] || 1;
+                    kategorieTags.push(`<span class="tag kategorie-${kategorieNum}" title="${kategorie}">${thema}</span>`);
+                });
+            });
+
+            const operatorBadges = [];
+            Object.entries(aufgabe.operatoren).forEach(([afb, ops]) => {
+                if (ops.length > 0) {
+                    const afbClass = afb.replace(' ', '-').toLowerCase();
+                    operatorBadges.push(`<span class="badge ${afbClass}">${afb}: ${ops.join(', ')}</span>`);
+                }
+            });
+
+            const citations = aufgabe.zitate.map(zitat => `
+                <div class="citation">
+                    "${zitat.text.substring(0, 150)}${zitat.text.length > 150 ? '...' : ''}"
+                    <span class="citation-author">— ${zitat.source}</span>
+                </div>
+            `).join('');
+
+            return `
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">${aufgabe.semester} – Thema ${aufgabe.thema_nr}</div>
+                        <div class="card-meta">
+                            <span class="badge semester">${aufgabe.semester}</span>
+                            <span class="badge">${aufgabe.teilaufgaben_anzahl} Teilaufgaben</span>
+                        </div>
+                    </div>
+
+                    ${operatorBadges.length > 0 ? `
+                        <div class="tags">
+                            ${operatorBadges.join(' ')}
+                        </div>
+                    ` : ''}
+
+                    ${kategorieTags.length > 0 ? `
+                        <div class="tags">
+                            ${kategorieTags.join(' ')}
+                        </div>
+                    ` : ''}
+
+                    ${citations}
+
+                    <button class="toggle-btn" data-card-id="${aufgabe.id}">▼ Volltext anzeigen</button>
+                    <div class="volltext" id="volltext-${aufgabe.id}">${aufgabe.volltext}</div>
+                </div>
+            `;
+        }
+
+        function updateStats() {
+            document.getElementById('totalCount').textContent = aufgaben.length;
+            document.getElementById('visibleCount').textContent = filteredAufgaben.length;
+            const semesters = new Set(aufgaben.map(a => a.semester));
+            document.getElementById('semesterCount').textContent = semesters.size;
+        }
+
+        function renderCharts() {
+            // Top 10 Themen
+            const themenCount = {};
+            aufgaben.forEach(aufgabe => {
+                Object.values(aufgabe.themen).forEach(themenListe => {
+                    themenListe.forEach(thema => {
+                        themenCount[thema] = (themenCount[thema] || 0) + 1;
+                    });
+                });
+            });
+
+            const topThemen = Object.entries(themenCount)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 10);
+
+            const themenCtx = document.getElementById('themenChart').getContext('2d');
+            if (themenChart) themenChart.destroy();
+            themenChart = new Chart(themenCtx, {
+                type: 'bar',
+                data: {
+                    labels: topThemen.map(t => t[0]),
+                    datasets: [{
+                        label: 'Anzahl Aufgaben',
+                        data: topThemen.map(t => t[1]),
+                        backgroundColor: '#007bff',
+                        borderColor: '#0056b3',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: { stepSize: 1 }
+                        }
+                    }
+                }
+            });
+
+            // AFB-Verteilung
+            const afbCount = { 'AFB I': 0, 'AFB II': 0, 'AFB III': 0 };
+            aufgaben.forEach(aufgabe => {
+                Object.entries(aufgabe.operatoren).forEach(([afb, ops]) => {
+                    afbCount[afb] += ops.length;
+                });
+            });
+
+            const afbCtx = document.getElementById('afbChart').getContext('2d');
+            if (afbChart) afbChart.destroy();
+            afbChart = new Chart(afbCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['AFB I (Reproduktion)', 'AFB II (Transfer)', 'AFB III (Reflexion)'],
+                    datasets: [{
+                        data: [afbCount['AFB I'], afbCount['AFB II'], afbCount['AFB III']],
+                        backgroundColor: ['#28a745', '#ffc107', '#dc3545'],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            document.getElementById('darkModeToggle').textContent = isDark ? '☀️' : '🌙';
+            localStorage.setItem('darkMode', isDark);
+        }
+
+        function loadDarkMode() {
+            const isDark = localStorage.getItem('darkMode') === 'true';
+            if (isDark) {
+                document.body.classList.add('dark-mode');
+                document.getElementById('darkModeToggle').textContent = '☀️';
+            }
+        }
+    </script>
+</body>
+</html>

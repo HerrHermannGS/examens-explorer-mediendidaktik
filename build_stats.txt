@@ -1,0 +1,92 @@
+
+
+╔══════════════════════════════════════════════════════════╗
+║          EXAMENS-EXPLORER STATISTIKEN                    ║
+║               Mediendidaktik 2015-2025                   ║
+╚══════════════════════════════════════════════════════════╝
+
+============================================================
+  📅 Semester-Übersicht
+============================================================
+  2015 Frühjahr        ██ (2 Aufgaben)
+  2015 Herbst          ██ (2 Aufgaben)
+  2016 Frühjahr        ██ (2 Aufgaben)
+  2016 Herbst          ██ (2 Aufgaben)
+  2017 Frühjahr        ██ (2 Aufgaben)
+  2017 Herbst          ██ (2 Aufgaben)
+  2018 Frühjahr        ██ (2 Aufgaben)
+  2018 Herbst          ██ (2 Aufgaben)
+  2019 Frühjahr        ██ (2 Aufgaben)
+  2019 Herbst          ██ (2 Aufgaben)
+  2020 Frühjahr        ██ (2 Aufgaben)
+  2020 Herbst          ██ (2 Aufgaben)
+  2021 Frühjahr        ██ (2 Aufgaben)
+  2021 Herbst          ██ (2 Aufgaben)
+  2022 Frühjahr        ██ (2 Aufgaben)
+  2022 Herbst          ██ (2 Aufgaben)
+  2023 Frühjahr        ██ (2 Aufgaben)
+  2023 Herbst          ██ (2 Aufgaben)
+  2024 Frühjahr        ██ (2 Aufgaben)
+  2024 Herbst          ██ (2 Aufgaben)
+  2025 Frühjahr        ██ (2 Aufgaben)
+
+  Gesamt: 42 Aufgaben über 21 Semester
+
+============================================================
+  📊 AFB-Verteilung
+============================================================
+  🟢 AFB I      ████                                                16 ( 9.9%)
+  🟡 AFB II     ██████████████████████                              74 (45.7%)
+  🔴 AFB III    ██████████████████████                              72 (44.4%)
+
+============================================================
+  🏆 Top 15 Themen
+============================================================
+   1. Lernplattform                  ██ (2x)
+   2. Designeffekte                  ██ (2x)
+   3. Hattie                         ██ (2x)
+   4. Feedback                       ██ (2x)
+   5. Moodle                         ██ (2x)
+   6. Multimedia                     ██ (2x)
+   7. Audio                          ██ (2x)
+   8. Repräsentationsformen          ██ (2x)
+   9. Blended Learning               █ (1x)
+  10. Konstruktivismus               █ (1x)
+  11. Gestaltungsprinzipien          █ (1x)
+  12. Cognitive Load Theory          █ (1x)
+  13. Open Educational Resources     █ (1x)
+  14. OER                            █ (1x)
+  15. Interactive Whiteboard         █ (1x)
+
+============================================================
+  📦 Themen nach Kategorie
+============================================================
+  🟡 Spezifische Medien/Formate          ███████████████████████         22 (47.8%)
+  🔵 Lernpsychologie                     ██████████                      10 (21.7%)
+  🟢 Mediendidaktische Konzepte          ███████                          7 (15.2%)
+  🟣 Lehr-Lerntheorien                   ███████                          7 (15.2%)
+
+============================================================
+  📝 Zitat-Statistik
+============================================================
+  Aufgaben mit Zitaten: 6/42 (14.3%)
+  Gesamt Zitate:        6
+  Ø Zitate pro Aufgabe: 0.14
+
+  Top 5 zitierte Autoren:
+    • Wege: 1x
+    • Renkl: 1x
+    • Moser: 1x
+
+============================================================
+  🔢 Teilaufgaben-Verteilung
+============================================================
+  1 Teilaufgaben: ███████████                    (23 Aufgaben)
+  2 Teilaufgaben: █                              (2 Aufgaben)
+  3 Teilaufgaben: ████████                       (16 Aufgaben)
+  10 Teilaufgaben:                                (1 Aufgaben)
+
+============================================================
+✅ 42 Aufgaben erfolgreich analysiert!
+============================================================
+
