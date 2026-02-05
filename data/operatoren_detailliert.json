@@ -1,0 +1,2029 @@
+[
+  {
+    "jahr": "2015",
+    "termin": "Frühjahr",
+    "thema_nr": 1,
+    "titel": "Einführung einer Lernplattform",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "stellen Sie dar",
+            "afb": 1,
+            "bezug": "Mehrwert Lernplattform, Blended Learning, Kollaboratives Lernen",
+            "textform": "deskriptiv"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "erläutern",
+            "afb": 2,
+            "bezug": "lehr-lernpsychologische Theorien, Instruktionsdesign, Gestaltungsprinzipien",
+            "textform": "analytisch"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "setzen Sie sich auseinander",
+            "afb": 3,
+            "bezug": "Vorwurf Mehraufwand für Lehrkraft",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2015",
+    "termin": "Frühjahr",
+    "thema_nr": 2,
+    "titel": "Konstruktivismus als Grundphilosophie",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "erörtern",
+            "afb": 3,
+            "bezug": "Computer/Netz als optimale konstruktivistische Medien",
+            "textform": "argumentativ"
+          },
+          {
+            "operator": "diskutieren",
+            "afb": 3,
+            "bezug": "Digitale Medien für Direkte Instruktion",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "skizzieren",
+            "afb": 2,
+            "bezug": "Zwei Unterrichtsszenarien (Konstruktivismus vs. Direkte Instruktion)",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "zeigen Sie auf",
+            "afb": 2,
+            "bezug": "Bezug zwischen Lehr-Lernzielen und instruktionalem Ansatz",
+            "textform": "analytisch"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Medieneinsatz unter Bezugnahme auf Theorien",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2015",
+    "termin": "Herbst",
+    "thema_nr": 1,
+    "titel": "Gestaltungsprinzipien multimedialer Lernarrangements",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "nennen",
+            "afb": 1,
+            "bezug": "Wichtigste Gestaltungsprinzipien",
+            "textform": "deskriptiv"
+          },
+          {
+            "operator": "erklären",
+            "afb": 1,
+            "bezug": "Gestaltungsprinzipien und lehr-lerntheoretische Grundlagen",
+            "textform": "deskriptiv"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "skizzieren",
+            "afb": 2,
+            "bezug": "Multimediales Lernarrangement",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "ausarbeiten",
+            "afb": 3,
+            "bezug": "Detaillierte Anwendung von Designeffekten an fünf Beispielen",
+            "textform": "konzeptionell-analytisch"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2015",
+    "termin": "Herbst",
+    "thema_nr": 2,
+    "titel": "Cognitive Load Theory",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "beschreiben",
+            "afb": 1,
+            "bezug": "Bausteine und Annahmen der Cognitive Load Theory",
+            "textform": "deskriptiv"
+          },
+          {
+            "operator": "erklären",
+            "afb": 1,
+            "bezug": "Bausteine und Annahmen der Cognitive Load Theory",
+            "textform": "deskriptiv"
+          },
+          {
+            "operator": "veranschaulichen",
+            "afb": 2,
+            "bezug": "Anwendung an mediendidaktisch relevanten Beispielen",
+            "textform": "analytisch"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "diskutieren",
+            "afb": 3,
+            "bezug": "Leistungen und Grenzen der Cognitive Load Theory",
+            "textform": "argumentativ"
+          },
+          {
+            "operator": "beurteilen",
+            "afb": 3,
+            "bezug": "Perspektive der Gestaltung medienbasierter Lernumgebungen",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "stellen Sie dar",
+            "afb": 2,
+            "bezug": "Praxisbeispiel zur Orientierung bei mediendidaktischen Entscheidungen",
+            "textform": "analytisch"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2016",
+    "termin": "Frühjahr",
+    "thema_nr": 1,
+    "titel": "Open Educational Resources (OER) und WebQuests",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "erklären",
+            "afb": 1,
+            "bezug": "Fundorte und Inhalte von OER",
+            "textform": "deskriptiv"
+          },
+          {
+            "operator": "diskutieren",
+            "afb": 3,
+            "bezug": "Interesse für Lehrkräfte und Veränderungsrechte",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "entwerfen",
+            "afb": 3,
+            "bezug": "Konzept für Lehrerfortbildung zu WebQuests und OER",
+            "textform": "konzeptionell"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "zeigen Sie auf",
+            "afb": 2,
+            "bezug": "Bereitstellung eigener Materialien als OER",
+            "textform": "deskriptiv-analytisch"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2016",
+    "termin": "Frühjahr",
+    "thema_nr": 2,
+    "titel": "Interactive Whiteboards (IWB)",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "erörtern",
+            "afb": 3,
+            "bezug": "Möglichkeiten und Grenzen von IWBs (lehr-lerntheoretisch)",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "legen Sie dar",
+            "afb": 1,
+            "bezug": "Organisatorische Überlegungen zur Anschaffung",
+            "textform": "deskriptiv"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "zeigen Sie auf",
+            "afb": 2,
+            "bezug": "Unterrichtssequenz zur lernförderlichen Integration",
+            "textform": "konzeptionell"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2016",
+    "termin": "Herbst",
+    "thema_nr": 1,
+    "titel": "Feedback in virtuellen Lernplattformen",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "erklären",
+            "afb": 1,
+            "bezug": "Begriff Feedback in der Lehr-Lernforschung",
+            "textform": "deskriptiv"
+          },
+          {
+            "operator": "stellen Sie dar",
+            "afb": 1,
+            "bezug": "Unterschiedliche Arten von Feedback",
+            "textform": "deskriptiv"
+          },
+          {
+            "operator": "erläutern",
+            "afb": 1,
+            "bezug": "Auswirkungen von Feedback auf Lernerfolg",
+            "textform": "deskriptiv"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "zeigen Sie auf",
+            "afb": 2,
+            "bezug": "Umsetzung in virtuellen Lernplattformen (z. B. Moodle)",
+            "textform": "analytisch"
+          },
+          {
+            "operator": "erläutern",
+            "afb": 2,
+            "bezug": "Eignung unterschiedlicher Feedback-Formen an Beispielen",
+            "textform": "analytisch"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Fachliche Konzepte und Forschungsbefunde",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "skizzieren",
+            "afb": 2,
+            "bezug": "Medienbasierte Unterrichtssequenz mit zwei Feedback-Formen",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Unterstützung des Lernprozesses im Hinblick auf Lernziele",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2016",
+    "termin": "Herbst",
+    "thema_nr": 2,
+    "titel": "Tableteinsatz im Unterricht",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "diskutieren",
+            "afb": 3,
+            "bezug": "Erwartungen didaktischer Mehrwerte (theoretisch & empirisch)",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "geben Sie",
+            "afb": 3,
+            "bezug": "Medienpädagogisch begründete Handlungsempfehlungen",
+            "textform": "konzeptionell-argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "entwerfen",
+            "afb": 3,
+            "bezug": "Unterrichtssequenz zur Nutzung lernförderlicher Potentiale",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Mediendidaktische Entscheidungen",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2017",
+    "termin": "Frühjahr",
+    "thema_nr": 1,
+    "titel": "Lernen mit Multimedia",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "skizzieren",
+            "afb": 2,
+            "bezug": "Lerntheoretische Modelle zu den Annahmen",
+            "textform": "deskriptiv-analytisch"
+          },
+          {
+            "operator": "diskutieren",
+            "afb": 3,
+            "bezug": "Kritische Auseinandersetzung mit den Annahmen",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "leiten Sie ab",
+            "afb": 2,
+            "bezug": "Prinzipien des Aufbaus und Designs aus Theorien",
+            "textform": "analytisch"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "entwerfen",
+            "afb": 3,
+            "bezug": "Multimediale Lerneinheit zur Umsetzung der Prinzipien",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Didaktische Entscheidungen anhand medienpädagogischer Ansätze",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2017",
+    "termin": "Frühjahr",
+    "thema_nr": 2,
+    "titel": "Aktive Produktion im WWW",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "erläutern",
+            "afb": 2,
+            "bezug": "Förderung der Produktion von Inhalten (lerntheoretisch/medienpädagogisch)",
+            "textform": "analytisch"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "legen Sie dar",
+            "afb": 1,
+            "bezug": "Chancen und Gefahren der aktiven Beteiligung im WWW",
+            "textform": "deskriptiv"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "entwerfen",
+            "afb": 3,
+            "bezug": "Unterrichtseinheit zur Nutzung von Potentialen und Sensibilisierung für Gefahren",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Didaktisch-methodische Überlegungen und rechtliche Aspekte",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2017",
+    "termin": "Herbst",
+    "thema_nr": 1,
+    "titel": "Tutorials und Erklärvideos",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "erläutern",
+            "afb": 2,
+            "bezug": "Potential von Tutorials/Erklärvideos (Bereitstellung vs. Produktion)",
+            "textform": "analytisch"
+          },
+          {
+            "operator": "belegen",
+            "afb": 2,
+            "bezug": "Aussagen mit empirischen Befunden",
+            "textform": "analytisch"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "entwerfen",
+            "afb": 3,
+            "bezug": "Unterrichtssequenz oder Projekt mit Tutorial-Einsatz",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Mediendidaktische Entscheidungen",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2017",
+    "termin": "Herbst",
+    "thema_nr": 2,
+    "titel": "Mediale Repräsentationsformen",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "erklären",
+            "afb": 1,
+            "bezug": "Begriff Repräsentationsformen",
+            "textform": "deskriptiv"
+          },
+          {
+            "operator": "stellen Sie dar",
+            "afb": 1,
+            "bezug": "Zentrale Erkenntnisse der Forschung zu Repräsentationsformen",
+            "textform": "deskriptiv"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "entwickeln",
+            "afb": 3,
+            "bezug": "Praxisrelevante Empfehlungen für Texte, Bilder und eine weitere Form",
+            "textform": "konzeptionell"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "entwerfen",
+            "afb": 3,
+            "bezug": "Unterrichtssequenz mit gezieltem Einsatz von Repräsentationsformen",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Mediendidaktische Planungsentscheidungen",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2018",
+    "termin": "Frühjahr",
+    "thema_nr": 1,
+    "titel": "Handynutzung im Unterricht",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "erläutern",
+            "afb": 1,
+            "bezug": "Grundlegende Prinzipien lernförderlichen Medieneinsatzes",
+            "textform": "deskriptiv"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Bezugnahme auf Konzepte und Befunde",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "erörtern",
+            "afb": 3,
+            "bezug": "Möglichkeiten der Nutzung privater Smartphones für Lernziele",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "entwerfen",
+            "afb": 3,
+            "bezug": "Unterrichtssequenz mit Smartphone-Einsatz",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Mediendidaktische Planungsentscheidungen",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2018",
+    "termin": "Frühjahr",
+    "thema_nr": 2,
+    "titel": "WebQuests und problemorientiertes Lernen",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "stellen Sie dar",
+            "afb": 1,
+            "bezug": "Gestaltung von WebQuests für problemorientiertes Lernen",
+            "textform": "deskriptiv"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "diskutieren",
+            "afb": 3,
+            "bezug": "Vor- und Nachteile von WebQuests (Planung, Rollenverteilung)",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "entwerfen",
+            "afb": 3,
+            "bezug": "Multimediale Lernumgebung als WebQuest",
+            "textform": "konzeptionell"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2018",
+    "termin": "Herbst",
+    "thema_nr": 1,
+    "titel": "Selbstgesteuertes Lernen mit Medien",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "erklären",
+            "afb": 1,
+            "bezug": "Begriff selbstreguliertes/selbstgesteuertes Lernen",
+            "textform": "deskriptiv"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "erläutern",
+            "afb": 2,
+            "bezug": "Notwendigkeit von SRL in Online-Lernumgebungen",
+            "textform": "analytisch"
+          },
+          {
+            "operator": "zeigen Sie auf",
+            "afb": 2,
+            "bezug": "Möglichkeiten der Unterstützung dieser Fähigkeit",
+            "textform": "analytisch"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "entwerfen",
+            "afb": 3,
+            "bezug": "Online-Lerneinheit zur Förderung von SRL und Fachwissen",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Mediendidaktische Entscheidungen",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2018",
+    "termin": "Herbst",
+    "thema_nr": 2,
+    "titel": "Evidenzbasiertes Unterrichten",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "erläutern",
+            "afb": 1,
+            "bezug": "Begriff evidenzbasiertes Unterrichten",
+            "textform": "deskriptiv"
+          },
+          {
+            "operator": "diskutieren",
+            "afb": 3,
+            "bezug": "Möglichkeiten und Grenzen der Forderung nach Evidenz",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "zeigen Sie auf",
+            "afb": 2,
+            "bezug": "Konsequenzen aus Forschung für Planung/Durchführung an einem Beispiel",
+            "textform": "analytisch"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "entwerfen",
+            "afb": 3,
+            "bezug": "Unterrichtssequenz gemäß Prinzip der Evidenzbasierung",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Lernziele und Stützung auf wissenschaftliche Evidenz",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2019",
+    "termin": "Frühjahr",
+    "thema_nr": 1,
+    "titel": "Lernwirksamkeit digitaler Medien",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "geben Sie einen Überblick",
+            "afb": 1,
+            "bezug": "Befunde der empirischen Lehr-Lernforschung",
+            "textform": "deskriptiv"
+          },
+          {
+            "operator": "erläutern",
+            "afb": 2,
+            "bezug": "Bedingungen für hohe Lerneffektivität",
+            "textform": "analytisch"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "diskutieren",
+            "afb": 3,
+            "bezug": "Bereicherung von Planung/Evaluation durch Befunde",
+            "textform": "argumentativ"
+          },
+          {
+            "operator": "zeigen Sie auf",
+            "afb": 2,
+            "bezug": "Grenzen der Übertragbarkeit von Befunden",
+            "textform": "analytisch"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "skizzieren",
+            "afb": 2,
+            "bezug": "Unterrichtsentwurf basierend auf Forschungsbefunden",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Optimale Unterstützung der Lernprozesse",
+            "textform": "argumentativ"
+          },
+          {
+            "operator": "wägen Sie ab",
+            "afb": 3,
+            "bezug": "Mögliche Alternativen unter mediendidaktischen Gesichtspunkten",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2019",
+    "termin": "Frühjahr",
+    "thema_nr": 2,
+    "titel": "Lernplattformen (mebis)",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "erläutern",
+            "afb": 2,
+            "bezug": "Mehrwert einer Lernplattform (lehr-lerntheoretisch) an konkretem Beispiel",
+            "textform": "analytisch"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "erörtern",
+            "afb": 3,
+            "bezug": "Mediengestalterische Grundsätze für effektives Lernen",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "skizzieren",
+            "afb": 2,
+            "bezug": "E-Learning-Einheit auf einer Lernplattform",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Didaktische Überlegungen anhand von Modellen/Theorien",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2019",
+    "termin": "Herbst",
+    "thema_nr": 1,
+    "titel": "Aktives und interaktives Lernen",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "erklären",
+            "afb": 1,
+            "bezug": "Begriffe aktive und interaktive Lernsettings",
+            "textform": "deskriptiv"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "diskutieren",
+            "afb": 3,
+            "bezug": "Positiver Einfluss im Vergleich zum traditionellen Unterricht",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "skizzieren",
+            "afb": 2,
+            "bezug": "Unterrichtssequenz in aktivem/interaktivem Setting",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Mediendidaktische Entscheidungen",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2019",
+    "termin": "Herbst",
+    "thema_nr": 2,
+    "titel": "Visual Literacy",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "erläutern",
+            "afb": 1,
+            "bezug": "Begriff Visual Literacy und Stellenwert",
+            "textform": "deskriptiv"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "diskutieren",
+            "afb": 3,
+            "bezug": "Förderung von Visual Literacy in der Schule",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "stellen Sie dar",
+            "afb": 2,
+            "bezug": "Optimaler Einsatz von Bildern anhand zweier Beispiele",
+            "textform": "analytisch"
+          },
+          {
+            "operator": "erläutern",
+            "afb": 2,
+            "bezug": "Hervorrufen lernförderlicher Effekte (Theorien/Befunde)",
+            "textform": "analytisch"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2020",
+    "termin": "Frühjahr",
+    "thema_nr": 1,
+    "titel": "Kognitivismus und Wissenskonstruktion",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "erläutern",
+            "afb": 2,
+            "bezug": "Assimilation und Akkommodation anhand eines Beispiels",
+            "textform": "analytisch"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "nennen",
+            "afb": 1,
+            "bezug": "Beispiele für pädagogische Umsetzung im multimedialen Kontext",
+            "textform": "deskriptiv"
+          },
+          {
+            "operator": "diskutieren",
+            "afb": 3,
+            "bezug": "Stärken und Schwächen solcher Lernumgebungen",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "stellen Sie vor",
+            "afb": 3,
+            "bezug": "Konzept einer eigenständigen Lernumgebung (2 Wochen)",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Didaktische und gestalterische Entscheidungen",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2020",
+    "termin": "Frühjahr",
+    "thema_nr": 2,
+    "titel": "Gamification und Game-based Learning",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "legen Sie dar",
+            "afb": 1,
+            "bezug": "Begriffe und Formen von Gamification/GBL",
+            "textform": "deskriptiv"
+          },
+          {
+            "operator": "zeigen Sie auf",
+            "afb": 2,
+            "bezug": "Chancen und Grenzen von Spielelementen",
+            "textform": "analytisch"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "erörtern",
+            "afb": 3,
+            "bezug": "Wirkungsvolle Realisierung durch digitale Potenziale",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "skizzieren",
+            "afb": 2,
+            "bezug": "Unterrichtsvorhaben mit Gamification-Elementen",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "erläutern",
+            "afb": 2,
+            "bezug": "Beitrag der Elemente zur Zielerreichung",
+            "textform": "analytisch"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2020",
+    "termin": "Herbst",
+    "thema_nr": 1,
+    "titel": "Flipped Classroom und Erklärvideos",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "erläutern",
+            "afb": 1,
+            "bezug": "Begriff Flipped Classroom",
+            "textform": "deskriptiv"
+          },
+          {
+            "operator": "diskutieren",
+            "afb": 3,
+            "bezug": "Einsatz der Methode (lehr-lerntheoretisch/mediendidaktisch)",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "erläutern",
+            "afb": 2,
+            "bezug": "Prinzipien und Gestaltungsmöglichkeiten von Erklärvideos",
+            "textform": "analytisch"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "skizzieren",
+            "afb": 2,
+            "bezug": "Unterrichtsvorhaben im Flipped-Classroom-Szenario",
+            "textform": "konzeptionell"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2020",
+    "termin": "Herbst",
+    "thema_nr": 2,
+    "titel": "Lesekompetenz und Hypertexte",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "erläutern",
+            "afb": 1,
+            "bezug": "Stellenwert des Lernens aus Texten und Lesekompetenz",
+            "textform": "deskriptiv"
+          },
+          {
+            "operator": "zeigen Sie auf",
+            "afb": 2,
+            "bezug": "Maßnahmen zur Optimierung von Texten",
+            "textform": "analytisch"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Maßnahmen zur Optimierung von Texten",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "erklären",
+            "afb": 1,
+            "bezug": "Begriff Hypertext",
+            "textform": "deskriptiv"
+          },
+          {
+            "operator": "erörtern",
+            "afb": 3,
+            "bezug": "Potenzial von Hypertexten für fachliche Lernprozesse",
+            "textform": "argumentativ"
+          },
+          {
+            "operator": "zeigen Sie auf",
+            "afb": 2,
+            "bezug": "Unterstützungsmaßnahmen beim Lernen mit Hypertexten",
+            "textform": "analytisch"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "entwerfen",
+            "afb": 3,
+            "bezug": "Unterrichtsvorhaben mit hypertextuellem System",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Mediendidaktische Maßnahmen",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2021",
+    "termin": "Frühjahr",
+    "thema_nr": 1,
+    "titel": "Digitales Feedback",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "erläutern",
+            "afb": 1,
+            "bezug": "Begriff Feedback und Gestaltung für Lernerfolg",
+            "textform": "deskriptiv"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "diskutieren",
+            "afb": 3,
+            "bezug": "Chancen und Grenzen des Feedbacks mit digitalen Medien",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "skizzieren",
+            "afb": 2,
+            "bezug": "Unterrichtsvorhaben mit digitalen Feedback-Tools",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Mediendidaktische Maßnahmen",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2021",
+    "termin": "Frühjahr",
+    "thema_nr": 2,
+    "titel": "Üben mit digitalen Medien",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "erläutern",
+            "afb": 1,
+            "bezug": "Begriff Üben und Funktionen beim Kompetenzerwerb",
+            "textform": "deskriptiv"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "erörtern",
+            "afb": 3,
+            "bezug": "Eignung digitaler Medien zur Unterstützung von Übungsprozessen",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "entwerfen",
+            "afb": 3,
+            "bezug": "Unterrichtsvorhaben mit digital gestützten Übungsphasen",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Mediendidaktische Maßnahmen",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2022",
+    "termin": "Frühjahr",
+    "thema_nr": 1,
+    "titel": "SAMR - digitale Medien zur Transformation",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "erläutern",
+            "afb": 1,
+            "bezug": "SAMR Modell und zugrundeliegende Annahmen",
+            "textform": "deskriptiv"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "zeigen Sie auf",
+            "afb": 2,
+            "bezug": "Übereinstimmung mit anderen Konzepten/Evidenzen",
+            "textform": "analytisch"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Übereinstimmung mit anderen Konzepten/Evidenzen",
+            "textform": "argumentativ"
+          },
+          {
+            "operator": "zeigen Sie auf",
+            "afb": 2,
+            "bezug": "Grenzen des Modells",
+            "textform": "analytisch"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "entwerfen",
+            "afb": 3,
+            "bezug": "Unterrichtsvorhaben unter Nutzung des SAMR Modells",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Mediendidaktische Maßnahmen",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2022",
+    "termin": "Frühjahr",
+    "thema_nr": 2,
+    "titel": "Entdeckendes Lernen mit digitalen Medien",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "erklären",
+            "afb": 1,
+            "bezug": "Begriff entdeckendes Lernen und lerntheoretische Einordnung",
+            "textform": "deskriptiv"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "diskutieren",
+            "afb": 3,
+            "bezug": "Potentiale und Grenzen (inkl. empirische Befunde)",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "skizzieren",
+            "afb": 2,
+            "bezug": "Unterrichtsvorhaben zum entdeckenden Lernen",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Mediendidaktische Entscheidungen",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2022",
+    "termin": "Herbst",
+    "thema_nr": 1,
+    "titel": "Anforderungen an digitale Lernangebote",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "erläutern",
+            "afb": 1,
+            "bezug": "Lehr-lerntheoretische Grundlagen (tiefes Verstehen, Problemlösung)",
+            "textform": "deskriptiv"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "stellen Sie dar",
+            "afb": 1,
+            "bezug": "Modell aus dem Instructional Design zur Problemlösung",
+            "textform": "deskriptiv"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "entwerfen",
+            "afb": 3,
+            "bezug": "Unterrichtssequenz zur Durchdringung eines komplexen Problems",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Rückbezug auf das gewählte ID-Modell",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2022",
+    "termin": "Herbst",
+    "thema_nr": 2,
+    "titel": "Mobile Endgeräte im Unterricht",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Potentiale lernförderlichen Einsatzes (Konzepte/Befunde)",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "diskutieren",
+            "afb": 3,
+            "bezug": "Möglichkeiten und Grenzen von BYOD",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "entwerfen",
+            "afb": 3,
+            "bezug": "Unterrichtsvorhaben mit Nutzung eigener Endgeräte",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Mediendidaktisches Vorgehen",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2023",
+    "termin": "Frühjahr",
+    "thema_nr": 1,
+    "titel": "Kollaboratives Lernen mit digitalen Medien",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "erläutern",
+            "afb": 1,
+            "bezug": "Begriff kollaboratives Lernen und Abgrenzung zu kooperativ",
+            "textform": "deskriptiv"
+          },
+          {
+            "operator": "stellen Sie dar",
+            "afb": 2,
+            "bezug": "Gestaltung für hohen Lerneffekt (Forschung/Theorien)",
+            "textform": "analytisch"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "diskutieren",
+            "afb": 3,
+            "bezug": "Chancen und Grenzen im unterrichtlichen Kontext",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "skizzieren",
+            "afb": 2,
+            "bezug": "Unterrichtsvorhaben mit kollaborativer digitaler Anwendung",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Mediendidaktisches Vorgehen",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2023",
+    "termin": "Frühjahr",
+    "thema_nr": 2,
+    "titel": "Differenzierung und Individualisierung",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "erörtern",
+            "afb": 3,
+            "bezug": "Warum Differenzierung/Individualisierung wichtige Prinzipien sind",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "diskutieren",
+            "afb": 3,
+            "bezug": "Eignung von LMS zur Realisierung (inkl. Befunde)",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "entwerfen",
+            "afb": 3,
+            "bezug": "Unterrichtsvorhaben mit digitaler Differenzierung",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Mediendidaktisches Vorgehen",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2023",
+    "termin": "Herbst",
+    "thema_nr": 1,
+    "titel": "Digitale Quiz- und Abstimmungssysteme",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "erklären",
+            "afb": 2,
+            "bezug": "Typische Elemente anhand konkreter Beispiele",
+            "textform": "analytisch"
+          },
+          {
+            "operator": "erläutern",
+            "afb": 1,
+            "bezug": "Lehr-lerntheoretische Grundlagen von Quiz-Apps",
+            "textform": "deskriptiv"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "diskutieren",
+            "afb": 3,
+            "bezug": "Chancen und Grenzen anhand konkreter Unterrichtssituationen",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "entwerfen",
+            "afb": 3,
+            "bezug": "Unterrichtsvorhaben mit Quizsystemen",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Mediendidaktisches Vorgehen",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2023",
+    "termin": "Herbst",
+    "thema_nr": 2,
+    "titel": "Auditive Bildungsmedien im Unterricht",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "erklären",
+            "afb": 1,
+            "bezug": "Begriff auditive Bildungsmedien und Spektrum",
+            "textform": "deskriptiv"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "stellen Sie dar",
+            "afb": 2,
+            "bezug": "Vor- und Nachteile im Vergleich zu visuellen Medien",
+            "textform": "analytisch"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "skizzieren",
+            "afb": 2,
+            "bezug": "Unterrichtsvorhaben zur Erstellung auditiver Medienprodukte",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Mediendidaktische Entscheidungen und rechtliche Aspekte",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2024",
+    "termin": "Frühjahr",
+    "thema_nr": 1,
+    "titel": "Augmented Reality im Unterricht",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "definieren",
+            "afb": 1,
+            "bezug": "Augmented Reality und Abgrenzung zu VR",
+            "textform": "deskriptiv"
+          },
+          {
+            "operator": "diskutieren",
+            "afb": 3,
+            "bezug": "Potenziale und Herausforderungen der AR-Integration",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "beschreiben",
+            "afb": 2,
+            "bezug": "Gewinnbringender Einsatz mithilfe eines Modells",
+            "textform": "analytisch"
+          },
+          {
+            "operator": "stützen",
+            "afb": 1,
+            "bezug": "Aussagen auf empirische Belege",
+            "textform": "deskriptiv"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "entwickeln",
+            "afb": 3,
+            "bezug": "Unterrichtsvorhaben mit AR-Unterstützung",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Mediendidaktische Entscheidungen",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2024",
+    "termin": "Frühjahr",
+    "thema_nr": 2,
+    "titel": "Inklusiver Unterricht mit digitalen Medien",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "erläutern",
+            "afb": 1,
+            "bezug": "Prinzipien/Designeffekte für digitale Medien",
+            "textform": "deskriptiv"
+          },
+          {
+            "operator": "legen Sie dar",
+            "afb": 2,
+            "bezug": "Grenzen der Anwendbarkeit im inklusiven Unterricht anhand von Beispielen",
+            "textform": "analytisch"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "beschreiben",
+            "afb": 2,
+            "bezug": "Chancen für individuelle Förderung anhand von Beispielen",
+            "textform": "analytisch"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "skizzieren",
+            "afb": 2,
+            "bezug": "Unterrichtsvorhaben für erfolgreiches inklusives Lernen",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Mediendidaktische Entscheidungen und rechtliche Aspekte",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2024",
+    "termin": "Herbst",
+    "thema_nr": 1,
+    "titel": "Lernen mit digitalen Visualisierungen",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "beschreiben",
+            "afb": 2,
+            "bezug": "Einsatzszenarien von Text-Bild-Kombinationen anhand von Beispielen",
+            "textform": "analytisch"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "diskutieren",
+            "afb": 3,
+            "bezug": "Herausforderungen und Chancen digitaler Mind-/Concept-Maps",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "skizzieren",
+            "afb": 2,
+            "bezug": "Unterrichtsvorhaben mit Mind-Maps zur Textarbeit",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Mediendidaktische Entscheidungen",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2024",
+    "termin": "Herbst",
+    "thema_nr": 2,
+    "titel": "Mediale Repräsentationsformen im Lernprozess",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "erklären",
+            "afb": 2,
+            "bezug": "Einsatz unterschiedlicher Repräsentationsformen anhand von Beispielen",
+            "textform": "analytisch"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "erörtern",
+            "afb": 3,
+            "bezug": "Vor- und Nachteile eines LMS für den Lernprozess",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "skizzieren",
+            "afb": 2,
+            "bezug": "Unterrichtsvorhaben mit ausgewählter Repräsentationsform",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Mediendidaktische Entscheidungen",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2025",
+    "termin": "Frühjahr",
+    "thema_nr": 1,
+    "titel": "Tutoriell betreutes Lernen mit digitalen Medien",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "definieren",
+            "afb": 1,
+            "bezug": "Begriff tutoriell betreutes Lernen mit Medien",
+            "textform": "deskriptiv"
+          },
+          {
+            "operator": "beschreiben",
+            "afb": 2,
+            "bezug": "Drei typische Szenarien effektiver Begleitung",
+            "textform": "analytisch"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "diskutieren",
+            "afb": 3,
+            "bezug": "Chancen und Herausforderungen anhand von Szenarien",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "skizzieren",
+            "afb": 2,
+            "bezug": "Unterrichtsvorhaben mit tutorieller Betreuung",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Mediendidaktische Entscheidungen",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "jahr": "2025",
+    "termin": "Frühjahr",
+    "thema_nr": 2,
+    "titel": "Problembasiertes Lernen im Projektunterricht",
+    "teilaufgaben": [
+      {
+        "nr": 1,
+        "operatoren": [
+          {
+            "operator": "definieren",
+            "afb": 1,
+            "bezug": "Begriff problembasiertes Lernen und Merkmale",
+            "textform": "deskriptiv"
+          },
+          {
+            "operator": "erläutern",
+            "afb": 2,
+            "bezug": "Rolle digitaler Medien beim problembasierten Lernen",
+            "textform": "analytisch"
+          }
+        ]
+      },
+      {
+        "nr": 2,
+        "operatoren": [
+          {
+            "operator": "diskutieren",
+            "afb": 3,
+            "bezug": "Chancen/Herausforderungen und Rolle der Lehrkraft",
+            "textform": "argumentativ"
+          }
+        ]
+      },
+      {
+        "nr": 3,
+        "operatoren": [
+          {
+            "operator": "skizzieren",
+            "afb": 2,
+            "bezug": "Unterrichtsvorhaben mit Projektcharakter",
+            "textform": "konzeptionell"
+          },
+          {
+            "operator": "begründen",
+            "afb": 3,
+            "bezug": "Mediendidaktische Entscheidungen",
+            "textform": "argumentativ"
+          }
+        ]
+      }
+    ]
+  }
+]

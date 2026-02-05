@@ -156,67 +156,78 @@ def count_subtasks(text: str) -> int:
 
 
 def parse_aufgaben(filepath: str) -> List[Dict[str, Any]]:
-    """Hauptparser-Funktion"""
+    """Hauptparser-Funktion - angepasst für seitenbasiertes PDF-Format"""
     with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
 
     aufgaben = []
 
-    # Splitte nach Dateien
-    files = re.split(r'={80}\nDATEI: ([^\n]+)\n={80}', content)
+    # Entferne Seitenmarkierungen und füge den gesamten Text zusammen
+    # Pattern: ================\nSEITE X\n================
+    content = re.sub(r'={80}\nSEITE \d+\n={80}\n', '', content)
 
-    # Iteriere über Paare (Dateiname, Inhalt)
-    for i in range(1, len(files), 2):
-        if i + 1 >= len(files):
+    # Finde alle Aufgaben: Pattern "Frühjahr/Herbst YYYY Thema Nr. X"
+    # Splitte den Text bei Semestermarkierungen
+    semester_pattern = r'((?:Frühjahr|Herbst)\s+\d{4})'
+    parts = re.split(semester_pattern, content)
+
+    # parts[0] ist leer oder Vortext
+    # parts[1] = "Frühjahr 2015", parts[2] = Text bis zum nächsten Semester
+    # parts[3] = "Herbst 2015", parts[4] = Text...
+
+    i = 1
+    while i < len(parts):
+        if i + 1 >= len(parts):
             break
 
-        dateiname = files[i].strip()
-        file_content = files[i + 1]
+        semester_raw = parts[i].strip()
+        semester_content = parts[i + 1]
 
-        # Extrahiere Semester
-        semester = extract_semester(dateiname)
+        # Normalisiere Semester
+        semester = semester_raw  # z.B. "Frühjahr 2015"
 
         # Splitte nach "Thema Nr. 1" und "Thema Nr. 2"
-        themen = re.split(r'Thema Nr\.\s*([12])', file_content)
+        themen = re.split(r'Thema\s+Nr\.\s*([12])', semester_content)
+
+        # themen[0] = Text vor Thema 1 (leer oder unwichtig)
+        # themen[1] = "1", themen[2] = Text von Thema 1
+        # themen[3] = "2", themen[4] = Text von Thema 2
 
         # Thema 1
         if len(themen) >= 3:
-            thema_nr = themen[1]
-            thema_text = themen[2]
+            thema_nr = int(themen[1])
+            thema_text = themen[2].strip()
 
-            # Finde das Ende von Thema 1 (entweder bei Thema 2 oder Ende)
-            if len(themen) >= 5:
-                # Es gibt Thema 2, also schneide bei "Thema Nr. 2" ab
-                thema_text = thema_text.split('Thema Nr.')[0]
-
-            aufgabe_id = f"{semester.replace(' ', '_')}_T1"
+            aufgabe_id = f"{semester.replace(' ', '_')}_T{thema_nr}"
             aufgaben.append({
                 'id': aufgabe_id,
                 'semester': semester,
-                'thema_nr': 1,
+                'thema_nr': thema_nr,
                 'operatoren': extract_operators(thema_text),
                 'themen': extract_themen(thema_text),
                 'zitate': extract_citations(thema_text),
                 'teilaufgaben_anzahl': count_subtasks(thema_text),
-                'volltext': thema_text.strip()
+                'volltext': thema_text
             })
 
         # Thema 2
         if len(themen) >= 5:
-            thema_nr = themen[3]
-            thema_text = themen[4]
+            thema_nr = int(themen[3])
+            thema_text = themen[4].strip()
 
-            aufgabe_id = f"{semester.replace(' ', '_')}_T2"
+            aufgabe_id = f"{semester.replace(' ', '_')}_T{thema_nr}"
             aufgaben.append({
                 'id': aufgabe_id,
                 'semester': semester,
-                'thema_nr': 2,
+                'thema_nr': thema_nr,
                 'operatoren': extract_operators(thema_text),
                 'themen': extract_themen(thema_text),
                 'zitate': extract_citations(thema_text),
                 'teilaufgaben_anzahl': count_subtasks(thema_text),
-                'volltext': thema_text.strip()
+                'volltext': thema_text
             })
+
+        i += 2
 
     return aufgaben
 
