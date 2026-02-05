@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Backup files
+*.bak
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+build_stats.txt
+
+# IDE
+.vscode/
+.idea/
+*.swp
