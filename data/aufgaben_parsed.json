@@ -7,10 +7,12 @@
       "AFB I": [],
       "AFB II": [
         "Erläutern",
+        "Erläutern sie",
         "Stellen sie dar"
       ],
       "AFB III": [
-        "Konzipieren"
+        "Konzipieren",
+        "setzen Sie sich auseinander"
       ]
     },
     "themen": {
@@ -40,7 +42,8 @@
         "Darstellen"
       ],
       "AFB II": [
-        "Begründen"
+        "Begründen",
+        "zeigen Sie auf"
       ],
       "AFB III": [
         "Diskutieren",
@@ -71,10 +74,12 @@
         "Nennen"
       ],
       "AFB II": [
-        "Erklären"
+        "Erklären",
+        "Erklären sie"
       ],
       "AFB III": [
-        "Skizzieren"
+        "Skizzieren",
+        "ausarbeiten"
       ]
     },
     "themen": {
@@ -101,7 +106,10 @@
         "Beschreiben"
       ],
       "AFB II": [
-        "Erklären"
+        "Erklären",
+        "Erklären sie",
+        "stellen Sie dar",
+        "veranschaulichen"
       ],
       "AFB III": [
         "Beurteilen",
@@ -135,7 +143,9 @@
     "operatoren": {
       "AFB I": [],
       "AFB II": [
-        "Erklären"
+        "Erklären",
+        "Erklären sie",
+        "zeigen Sie auf"
       ],
       "AFB III": [
         "Diskutieren",
@@ -162,8 +172,12 @@
     "semester": "Frühjahr 2016",
     "thema_nr": 2,
     "operatoren": {
-      "AFB I": [],
-      "AFB II": [],
+      "AFB I": [
+        "legen Sie dar"
+      ],
+      "AFB II": [
+        "zeigen Sie auf"
+      ],
       "AFB III": [
         "Erörtern"
       ]
@@ -187,11 +201,15 @@
     "semester": "Herbst 2016",
     "thema_nr": 1,
     "operatoren": {
-      "AFB I": [],
+      "AFB I": [
+        "stellen Sie dar"
+      ],
       "AFB II": [
         "Begründen",
         "Erklären",
+        "Erklären sie",
         "Erläutern",
+        "Erläutern sie",
         "Zeigen sie auf"
       ],
       "AFB III": [
@@ -226,7 +244,8 @@
       ],
       "AFB III": [
         "Diskutieren",
-        "Entwerfen"
+        "Entwerfen",
+        "geben Sie"
       ]
     },
     "themen": {
@@ -256,7 +275,8 @@
     "operatoren": {
       "AFB I": [],
       "AFB II": [
-        "Begründen"
+        "Begründen",
+        "leiten Sie ab"
       ],
       "AFB III": [
         "Diskutieren",
@@ -285,10 +305,13 @@
     "semester": "Frühjahr 2017",
     "thema_nr": 2,
     "operatoren": {
-      "AFB I": [],
+      "AFB I": [
+        "legen Sie dar"
+      ],
       "AFB II": [
         "Begründen",
-        "Erläutern"
+        "Erläutern",
+        "Erläutern sie"
       ],
       "AFB III": [
         "Entwerfen"
@@ -315,7 +338,8 @@
       "AFB II": [
         "Begründen",
         "Belegen",
-        "Erläutern"
+        "Erläutern",
+        "Erläutern sie"
       ],
       "AFB III": [
         "Entwerfen"
@@ -338,10 +362,13 @@
     "semester": "Herbst 2017",
     "thema_nr": 2,
     "operatoren": {
-      "AFB I": [],
+      "AFB I": [
+        "stellen Sie dar"
+      ],
       "AFB II": [
         "Begründen",
-        "Erklären"
+        "Erklären",
+        "Erklären sie"
       ],
       "AFB III": [
         "Entwerfen",
@@ -394,7 +421,9 @@
     "semester": "Frühjahr 2018",
     "thema_nr": 2,
     "operatoren": {
-      "AFB I": [],
+      "AFB I": [
+        "stellen Sie dar"
+      ],
       "AFB II": [],
       "AFB III": [
         "Diskutieren",
@@ -410,11 +439,6 @@
       ]
     },
     "zitate": [
-      {
-        "text": "„Tatsächlich aber sollen WebQuests ‚problemorientiertes und selbstständiges Lernen [...]‘",
-        "author": "Wagner",
-        "source": "Wagner, 2007"
-      },
       {
         "text": "es und selbstständiges Lernen [...]‘ (Wagner 2007) und ‚das aktive Erforschen von interessanten Problemstellungen [...mithilfe] authentische(r) Texte und Quellen, wie sie im Internet zugänglich sind‘",
         "author": "Moser",
@@ -435,7 +459,9 @@
       "AFB II": [
         "Begründen",
         "Erklären",
+        "Erklären sie",
         "Erläutern",
+        "Erläutern sie",
         "Zeigen sie auf"
       ],
       "AFB III": [
@@ -464,7 +490,9 @@
       "AFB I": [],
       "AFB II": [
         "Begründen",
-        "Erläutern"
+        "Erläutern",
+        "Erläutern sie",
+        "zeigen Sie auf"
       ],
       "AFB III": [
         "Diskutieren",
@@ -488,15 +516,20 @@
     "semester": "Frühjahr 2019",
     "thema_nr": 1,
     "operatoren": {
-      "AFB I": [],
+      "AFB I": [
+        "geben Sie einen Überblick"
+      ],
       "AFB II": [
         "Begründen",
         "Belegen",
-        "Erläutern"
+        "Erläutern",
+        "Erläutern sie",
+        "zeigen Sie auf"
       ],
       "AFB III": [
         "Diskutieren",
-        "Skizzieren"
+        "Skizzieren",
+        "wägen Sie ab"
       ]
     },
     "themen": {
@@ -505,13 +538,7 @@
       "Lernpsychologie": [],
       "Spezifische Medien/Formate": []
     },
-    "zitate": [
-      {
-        "text": "genden Ergebnisse [der empirischen Wissenschaft] belegen [...], dass die Art und Weise der didaktischen Einbindung in den Unterricht entscheidend für die Lerneffektivität digitaler Medien ist [...].“",
-        "author": "Schaumburg",
-        "source": "Schaumburg, 2018"
-      }
-    ],
+    "zitate": [],
     "teilaufgaben_anzahl": 3,
     "volltext": "„Die vorliegenden Ergebnisse [der empirischen Wissenschaft] belegen [...], dass die Art und Weise der didaktischen Einbindung in den Unterricht entscheidend für die Lerneffektivität digitaler Medien ist [...].“ (Schaumburg, 2018)\n\n1. Geben Sie einen Überblick über die Befunde der empirischen Lehr-Lernforschung zur Lernwirksamkeit des Einsatzes digitaler Medien! Erläutern Sie, unter welchen Bedingungen die Lerneffektivität [...] besonders hoch ist!\n\n2. Diskutieren Sie, inwiefern und inwieweit die Befunde der empirischen Lehr- und Lernforschung die Planung, Durchführung und Evaluation von schulischem Unterricht bereichern können! Zeigen Sie dabei auch mögliche Grenzen der Übertragbarkeit derartiger Forschungsbefunde auf den schulischen Unterricht auf!\n\n3. Skizzieren und begründen Sie einen Unterrichtsentwurf [...], in welchem Sie digitale Medien so einbinden, dass sie gemäß den Befunden der empirischen Lehr-Lernforschung die Lernprozesse von Schülerinnen und Schülern optimal unterstützen können! Wägen Sie dabei mögliche Alternativen unter mediendidaktischen Gesichtspunkten ab!",
     "titel": "Lernwirksamkeit digitaler Medien",
@@ -525,7 +552,8 @@
       "AFB I": [],
       "AFB II": [
         "Begründen",
-        "Erläutern"
+        "Erläutern",
+        "Erläutern sie"
       ],
       "AFB III": [
         "Erörtern",
@@ -556,7 +584,8 @@
       "AFB I": [],
       "AFB II": [
         "Begründen",
-        "Erklären"
+        "Erklären",
+        "Erklären sie"
       ],
       "AFB III": [
         "Diskutieren",
@@ -582,7 +611,9 @@
     "operatoren": {
       "AFB I": [],
       "AFB II": [
-        "Erläutern"
+        "Erläutern",
+        "Erläutern sie",
+        "stellen Sie dar"
       ],
       "AFB III": [
         "Diskutieren"
@@ -614,14 +645,17 @@
     "thema_nr": 1,
     "operatoren": {
       "AFB I": [
-        "Nennen"
+        "Nennen",
+        "Nennen sie"
       ],
       "AFB II": [
         "Begründen",
-        "Erläutern"
+        "Erläutern",
+        "Erläutern sie"
       ],
       "AFB III": [
-        "Diskutieren"
+        "Diskutieren",
+        "stellen Sie vor"
       ]
     },
     "themen": {
@@ -649,7 +683,9 @@
       "AFB I": [],
       "AFB II": [
         "Erläutern",
-        "Legen sie dar"
+        "Erläutern sie",
+        "Legen sie dar",
+        "zeigen Sie auf"
       ],
       "AFB III": [
         "Erörtern",
@@ -678,7 +714,8 @@
     "operatoren": {
       "AFB I": [],
       "AFB II": [
-        "Erläutern"
+        "Erläutern",
+        "Erläutern sie"
       ],
       "AFB III": [
         "Diskutieren",
@@ -708,7 +745,9 @@
       "AFB II": [
         "Begründen",
         "Erklären",
+        "Erklären sie",
         "Erläutern",
+        "Erläutern sie",
         "Zeigen sie auf"
       ],
       "AFB III": [
@@ -740,7 +779,8 @@
       "AFB I": [],
       "AFB II": [
         "Begründen",
-        "Erläutern"
+        "Erläutern",
+        "Erläutern sie"
       ],
       "AFB III": [
         "Diskutieren",
@@ -769,7 +809,8 @@
       "AFB I": [],
       "AFB II": [
         "Begründen",
-        "Erläutern"
+        "Erläutern",
+        "Erläutern sie"
       ],
       "AFB III": [
         "Entwerfen",
@@ -782,13 +823,7 @@
       "Lernpsychologie": [],
       "Spezifische Medien/Formate": []
     },
-    "zitate": [
-      {
-        "text": "Vorstellungen von Stumpfsinn und Drill verbunden. Andererseits werden in jüngster Zeit im Zuge kognitivistischer und konstruktivistischer Theorien Hoffnungen auf ‚intelligentes Üben‘ [...] geweckt.“",
-        "author": "Brinkmann",
-        "source": "Brinkmann, 2009"
-      }
-    ],
+    "zitate": [],
     "teilaufgaben_anzahl": 3,
     "volltext": "„Die Übung erhält im pädagogischen Feld nach wie vor wenig Aufmerksamkeit [...], obwohl sie als Praxis dem Lernen elementar zugehörig ist. Mit der Lernform Übung sind einerseits traditionelle Vorstellungen von Stumpfsinn und Drill verbunden. Andererseits werden in jüngster Zeit im Zuge kognitivistischer und konstruktivistischer Theorien Hoffnungen auf ‚intelligentes Üben‘ [...] geweckt.“ (Brinkmann, 2009)\n\n1. Erläutern Sie, was im Kontext der Schule unter „Üben“ zu verstehen ist und welche spezifischen Funktionen das Üben beim Erwerb von Wissen und Kompetenzen erfüllt! Fundieren Sie Ihre Aussagen mit Theorien, Konzepten und Befunden der Bildungswissenschaften!\n\n2. Erörtern Sie, inwieweit sich digitale Medien dazu eignen, Prozesse des Übens zu unterstützen, und inwiefern sie dabei Vorteile im Vergleich zu nicht-mediengestütztem Unterricht eröffnen! Veranschaulichen und erläutern Sie Ihre Argumentation an passenden Beispielen!\n\n3. Entwerfen Sie ein konkretes Unterrichtsvorhaben [...], in dem Sie im Rahmen einer auf fachlichen Kompetenzerwerb abzielenden Sequenz von mehreren Unterrichtsstunden digital gestützte Übungsphasen integrieren! Geben Sie dabei Ihre Lehr-Lernziele an und begründen Sie Ihre mediendidaktischen Maßnahmen!",
     "titel": "Üben mit digitalen Medien",
@@ -804,6 +839,7 @@
         "Begründen",
         "Erklären",
         "Erläutern",
+        "Erläutern sie",
         "Zeigen sie auf"
       ],
       "AFB III": [
@@ -833,7 +869,8 @@
       "AFB I": [],
       "AFB II": [
         "Begründen",
-        "Erklären"
+        "Erklären",
+        "Erklären sie"
       ],
       "AFB III": [
         "Diskutieren",
@@ -859,10 +896,13 @@
     "semester": "Herbst 2022",
     "thema_nr": 1,
     "operatoren": {
-      "AFB I": [],
+      "AFB I": [
+        "stellen Sie dar"
+      ],
       "AFB II": [
         "Begründen",
-        "Erläutern"
+        "Erläutern",
+        "Erläutern sie"
       ],
       "AFB III": [
         "Entwerfen"
@@ -924,7 +964,9 @@
       "AFB I": [],
       "AFB II": [
         "Begründen",
-        "Erläutern"
+        "Erläutern",
+        "Erläutern sie",
+        "stellen Sie dar"
       ],
       "AFB III": [
         "Diskutieren",
@@ -983,7 +1025,9 @@
       "AFB II": [
         "Begründen",
         "Erklären",
-        "Erläutern"
+        "Erklären sie",
+        "Erläutern",
+        "Erläutern sie"
       ],
       "AFB III": [
         "Diskutieren",
@@ -1018,7 +1062,9 @@
       "AFB I": [],
       "AFB II": [
         "Begründen",
-        "Erklären"
+        "Erklären",
+        "Erklären sie",
+        "stellen Sie dar"
       ],
       "AFB III": [
         "Skizzieren"
@@ -1043,7 +1089,8 @@
     "operatoren": {
       "AFB I": [
         "Beschreiben",
-        "Definieren"
+        "Definieren",
+        "stützen"
       ],
       "AFB II": [
         "Begründen"
@@ -1078,7 +1125,9 @@
       ],
       "AFB II": [
         "Begründen",
-        "Erläutern"
+        "Erläutern",
+        "Erläutern sie",
+        "legen Sie dar"
       ],
       "AFB III": [
         "Skizzieren"
@@ -1105,7 +1154,8 @@
     "operatoren": {
       "AFB I": [
         "Beschreiben",
-        "Nennen"
+        "Nennen",
+        "Nennen sie"
       ],
       "AFB II": [
         "Begründen"
@@ -1121,13 +1171,7 @@
       "Lernpsychologie": [],
       "Spezifische Medien/Formate": []
     },
-    "zitate": [
-      {
-        "text": "Ein digitales Werkzeug unterstützt die Arbeit mit Mindmaps, die auch gemeinsam editiert... werden können.“ (",
-        "author": "",
-        "source": "Kerres, M. 2018) 1. Beschreiben Sie anhand von drei Beispielen Einsatzszenarien von Visualisierungen in Form von Text-Bild-Kombinationen im digital gestützten Unterricht! Beziehen Sie das Zitat in Ihre Ausführungen ein! 2. Diskutieren Sie anhand von digitalen Mind- bzw. Concept-Maps die Herausforderungen und Chancen bei der Integration solcher Visualisierungen in den Unterricht! Gehen Sie dabei auf lehr-lerntheoretische Grundannahmen sowie auf Theorien des multimedialen Lernens ein und stützen Sie Ihre Ausführungen auf empirische Belege! 3. Skizzieren Sie ein Unterrichtsvorhaben [...], bei dem digitale Mind- bzw. Concept-Maps eine wesentliche Rolle für die intensive Auseinandersetzung mit anspruchsvollen Texten spielen! Nennen Sie dabei auch fachbezogene Lehr-Lernziele bzw. Kompetenzerwartungen und begründen Sie Ihre mediendidaktischen Entscheidungen!"
-      }
-    ],
+    "zitate": [],
     "teilaufgaben_anzahl": 3,
     "volltext": "Lernen mit digitalen Visualisierungen „Anspruchsvolle Texte erfordern eine intensive Auseinandersetzung. [...] Das Erstellen von Mindmaps kann eine Hilfe sein... Ein digitales Werkzeug unterstützt die Arbeit mit Mindmaps, die auch gemeinsam editiert... werden können.“ (Quelle: Kerres, M. 2018)\n\n1. Beschreiben Sie anhand von drei Beispielen Einsatzszenarien von Visualisierungen in Form von Text-Bild-Kombinationen im digital gestützten Unterricht! Beziehen Sie das Zitat in Ihre Ausführungen ein!\n\n2. Diskutieren Sie anhand von digitalen Mind- bzw. Concept-Maps die Herausforderungen und Chancen bei der Integration solcher Visualisierungen in den Unterricht! Gehen Sie dabei auf lehr-lerntheoretische Grundannahmen sowie auf Theorien des multimedialen Lernens ein und stützen Sie Ihre Ausführungen auf empirische Belege!\n\n3. Skizzieren Sie ein Unterrichtsvorhaben [...], bei dem digitale Mind- bzw. Concept-Maps eine wesentliche Rolle für die intensive Auseinandersetzung mit anspruchsvollen Texten spielen! Nennen Sie dabei auch fachbezogene Lehr-Lernziele bzw. Kompetenzerwartungen und begründen Sie Ihre mediendidaktischen Entscheidungen!",
     "titel": "Lernen mit digitalen Visualisierungen",
@@ -1139,11 +1183,13 @@
     "thema_nr": 2,
     "operatoren": {
       "AFB I": [
-        "Nennen"
+        "Nennen",
+        "Nennen sie"
       ],
       "AFB II": [
         "Begründen",
-        "Erklären"
+        "Erklären",
+        "Erklären sie"
       ],
       "AFB III": [
         "Erörtern",
@@ -1172,7 +1218,8 @@
       "AFB I": [
         "Beschreiben",
         "Definieren",
-        "Nennen"
+        "Nennen",
+        "Nennen sie"
       ],
       "AFB II": [
         "Begründen"
@@ -1201,12 +1248,14 @@
     "operatoren": {
       "AFB I": [
         "Definieren",
-        "Nennen"
+        "Nennen",
+        "Nennen sie"
       ],
       "AFB II": [
         "Begründen",
         "Belegen",
-        "Erläutern"
+        "Erläutern",
+        "Erläutern sie"
       ],
       "AFB III": [
         "Diskutieren",

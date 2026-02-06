@@ -6,6 +6,10 @@ def cleanup():
     data_path = 'data/aufgaben_parsed.json'
     detailed_path = 'data/operatoren_detailliert.json'
     
+    if not os.path.exists(data_path) or not os.path.exists(detailed_path):
+        print("Fehler: Dateien nicht gefunden.")
+        return
+
     with open(data_path, 'r', encoding='utf-8') as f:
         aufgaben = json.load(f)
         
@@ -19,7 +23,6 @@ def cleanup():
         detailed_map[key] = entry
         
     # Reference list of common operators and their typical AFB levels
-    # This is a bit flexible as levels can vary slightly depending on context
     op_ref = {
         "nennen": "AFB I",
         "benennen": "AFB I",
@@ -28,6 +31,7 @@ def cleanup():
         "aufzählen": "AFB I",
         "wiedergeben": "AFB I",
         "aufzeigen": "AFB I",
+        "zusammenfassen": "AFB I",
         "erläutern": "AFB II",
         "erklären": "AFB II",
         "vergleichen": "AFB II",
@@ -35,6 +39,7 @@ def cleanup():
         "charakterisieren": "AFB II",
         "einordnen": "AFB II",
         "belegen": "AFB II",
+        "herausarbeiten": "AFB II",
         "zeigen sie auf": "AFB II",
         "stellen sie dar": "AFB II",
         "skizzieren": "AFB II",
@@ -49,7 +54,13 @@ def cleanup():
         "gestalten": "AFB III",
         "reflektieren": "AFB III",
         "begründen": "AFB III",
-        "setzen sie sich auseinander": "AFB III"
+        "prüfen": "AFB III",
+        "überprüfen": "AFB III",
+        "setzen sie sich auseinander": "AFB III",
+        "bewerten sie": "AFB III",
+        "erläutern sie": "AFB II",
+        "erklären sie": "AFB II",
+        "nennen sie": "AFB I"
     }
 
     modified_count = 0
@@ -57,13 +68,12 @@ def cleanup():
     for aufgabe in aufgaben:
         changed = False
         volltext = aufgabe['volltext']
+        v_lower = volltext.lower()
         
-        # 1. Teilaufgaben Anzahl korrigieren
-        # Suche nach "1.", "2.", "3." etc. am Anfang einer Zeile oder nach Newline
+        # --- 1. TEILAUFGABEN_ANZAHL ---
         matches = re.findall(r'(?m)^\s*(\d+)\.', volltext)
         if not matches:
-            # Manchmal sind sie nicht am Anfang der Zeile
-            matches = re.findall(r'\s(\d+)\.', volltext)
+            matches = re.findall(r'[ \n](\d+)\.', volltext)
             
         if matches:
             max_nr = max(int(m) for m in matches)
@@ -72,104 +82,96 @@ def cleanup():
                 aufgabe['teilaufgaben_anzahl'] = max_nr
                 changed = True
 
-        # 2. Operatoren prüfen
-        # Wir sammeln alle Operatoren aus dem volltext
-        found_ops = set()
-        v_lower = volltext.lower()
-        
-        # Spezielle Phrasen zuerst
-        phrases = ["stellen sie dar", "zeigen sie auf", "setzen sie sich auseinander", "stellung nehmen"]
-        for p in phrases:
-            if p in v_lower:
-                found_ops.add(p)
-                v_lower = v_lower.replace(p, " ") # Verhindere Doppelzählung von "darstellen" etc.
-
-        # Einzelwörter
-        words = re.findall(r'\b\w+\b', v_lower)
-        for w in words:
-            if w in op_ref and w not in ["sie", "sich"]: # "sie" und "sich" sind keine Operatoren
-                found_ops.add(w)
-
-        # Abgleich mit existing operatoren
-        new_operatoren = {
+        # --- 2. OPERATOREN ---
+        new_operatoren_sets = {
             "AFB I": set(aufgabe['operatoren'].get("AFB I", [])),
             "AFB II": set(aufgabe['operatoren'].get("AFB II", [])),
             "AFB III": set(aufgabe['operatoren'].get("AFB III", []))
         }
-        
-        # Ergänze fehlende aus found_ops
-        for op in found_ops:
-            # Check if already present (case insensitive)
-            present = False
-            for level in new_operatoren:
-                if any(op.lower() == existing.lower() for existing in new_operatoren[level]):
-                    present = True
-                    break
-            
-            if not present:
-                # Welches AFB?
-                level = op_ref.get(op.lower(), "AFB II") # Default II if unknown
-                
-                # Check detailed map for better level accuracy
-                d_entry = detailed_map.get(aufgabe['id'])
-                if d_entry:
-                    for ta in d_entry['teilaufgaben']:
-                        for d_op in ta['operatoren']:
-                            if d_op['operator'].lower() == op.lower():
-                                level = f"AFB {d_op['afb']}"
-                                if level == "AFB 1": level = "AFB I"
-                                if level == "AFB 2": level = "AFB II"
-                                if level == "AFB 3": level = "AFB III"
-                
-                new_operatoren[level].add(op.capitalize())
-                print(f"[{aufgabe['id']}] Operator ergänzt: {op} -> {level}")
-                changed = True
 
-        # Zurückverwandeln in Listen
-        aufgabe['operatoren'] = {k: sorted(list(v)) for k, v in new_operatoren.items()}
+        # Extrahiere Operatoren aus detailed data (falls vorhanden)
+        d_entry = detailed_map.get(aufgabe['id'])
+        if d_entry:
+            for ta in d_entry['teilaufgaben']:
+                for d_op in ta['operatoren']:
+                    op_val = d_op['operator']
+                    afb_val = d_op['afb']
+                    level = f"AFB {afb_val}"
+                    if level == "AFB 1": level = "AFB I"
+                    if level == "AFB 2": level = "AFB II"
+                    if level == "AFB 3": level = "AFB III"
+                    
+                    if level in new_operatoren_sets:
+                        # Check if already present in any set (ignore case)
+                        already_present = False
+                        for l in new_operatoren_sets:
+                            if any(op_val.lower() == existing.lower() for existing in new_operatoren_sets[l]):
+                                already_present = True
+                                break
+                        
+                        if not already_present:
+                            new_operatoren_sets[level].add(op_val)
+                            print(f"[{aufgabe['id']}] Operator aus Detailed-Daten ergänzt: {op_val} ({level})")
+                            changed = True
 
-        # 3. Zitate korrigieren
+        # Suche zusätzliche Operatoren im Volltext (die nicht in detailed-daten stehen)
+        for op_key, default_level in op_ref.items():
+            # Suche nach dem Operator im Volltext (Wortgrenzen beachten)
+            if re.search(r'\b' + re.escape(op_key) + r'\b', v_lower):
+                # Check if already present (ignore case)
+                already_present = False
+                for l in new_operatoren_sets:
+                    if any(op_key.lower() == existing.lower() for existing in new_operatoren_sets[l]):
+                        already_present = True
+                        break
+                
+                if not already_present:
+                    new_operatoren_sets[default_level].add(op_key.capitalize())
+                    print(f"[{aufgabe['id']}] Operator aus Volltext ergänzt: {op_key} ({default_level})")
+                    changed = True
+
+        aufgabe['operatoren'] = {k: sorted(list(v)) for k, v in new_operatoren_sets.items()}
+
+        # --- 3. ZITATE ---
         if 'zitate' in aufgabe:
             valid_zitate = []
             for zitat in aufgabe['zitate']:
                 text = zitat['text']
-                # Wenn abgeschnitten ODER in volltext findbar
-                cleaned_text = text.replace('[...]', '').replace('...', '').strip()
-                # Versuche den vollständigen Satz im Volltext zu finden
-                # Wir suchen nach den ersten 20 Zeichen des Zitats im Volltext
-                snippet = cleaned_text[:30]
-                if snippet in volltext:
-                    # Finde den ganzen Satz oder den Abschnitt im Volltext
-                    # Da Zitate oft am Anfang stehen, schauen wir ob wir den Text dort finden
-                    pos = volltext.find(snippet)
-                    if pos != -1:
-                        # Wir nehmen den Teil aus dem Volltext bis zum Ende des Satzes oder Anführungszeichen
-                        # Einfacher: Da wir keine neuen Zitate hinzufügen sollen, 
-                        # versuchen wir nur das bestehende zu heilen.
-                        # Wenn das Zitat im Volltext ist, nehmen wir den Teil der so aussieht wie das Zitat.
-                        
-                        # Suche nach dem Ende-Snippet
-                        end_snippet = cleaned_text[-30:]
-                        end_pos = volltext.find(end_snippet, pos)
-                        if end_pos != -1:
-                            full_version = volltext[pos:end_pos + len(end_snippet)].strip()
-                            if full_version != zitat['text']:
-                                print(f"[{aufgabe['id']}] Zitat vervollständigt: {zitat['text'][:30]}...")
-                                zitat['text'] = full_version
-                                changed = True
+                # Entferne Marker
+                cleaned_search = text.replace('[...]', '').replace('...', '').replace('[', '').replace(']', '').strip()
+                if not cleaned_search:
+                    continue
+
+                # Suche im Volltext
+                # Nehme die ersten 20 Zeichen als Anker
+                anchor = cleaned_search[:20]
+                if anchor in volltext:
+                    start_pos = volltext.find(anchor)
+                    # Versuche das Ende zu finden (letzte 20 Zeichen)
+                    end_anchor = cleaned_search[-20:]
+                    end_pos = volltext.find(end_anchor, start_pos)
+                    
+                    if end_pos != -1:
+                        # Extrahiere den Teil aus dem Volltext
+                        full_version = volltext[start_pos:end_pos + len(end_anchor)].strip()
+                        if full_version != zitat['text']:
+                            print(f"[{aufgabe['id']}] Zitat im Volltext geheilt.")
+                            zitat['text'] = full_version
+                            changed = True
                         valid_zitate.append(zitat)
                     else:
-                        # Wenn nicht im Volltext, behalten wir es wenn es nicht zu kaputt ist
-                        if '[...]' not in text:
+                        # Wenn Ende nicht findbar aber Text sauber, behalten
+                        if '[...]' not in text and '...' not in text:
                             valid_zitate.append(zitat)
                         else:
-                            print(f"[{aufgabe['id']}] Zitat entfernt (abgeschnitten/nicht heilbar): {text[:30]}...")
+                            print(f"[{aufgabe['id']}] Zitat entfernt (unvollständig): {text[:20]}...")
                             changed = True
                 else:
-                    if '[...]' not in text:
-                         valid_zitate.append(zitat)
+                    # Wenn gar nicht im Volltext, nur behalten wenn sauber
+                    if '[...]' not in text and '...' not in text:
+                        valid_zitate.append(zitat)
                     else:
-                        print(f"[{aufgabe['id']}] Zitat entfernt (nicht im Volltext): {text[:30]}...")
+                        print(f"[{aufgabe['id']}] Zitat entfernt (nicht im Volltext + unvollständig): {text[:20]}...")
                         changed = True
             aufgabe['zitate'] = valid_zitate
 
@@ -180,8 +182,6 @@ def cleanup():
         with open(data_path, 'w', encoding='utf-8') as f:
             json.dump(aufgaben, f, ensure_ascii=False, indent=2)
         print(f"\n✅ {modified_count} Aufgaben wurden aktualisiert.")
-    else:
-        print("\n✨ Keine Änderungen notwendig.")
 
 if __name__ == "__main__":
     cleanup()
