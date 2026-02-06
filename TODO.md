@@ -1,7 +1,7 @@
 # 📋 TODO - Examens-Explorer Mediendidaktik
 
 ## 🚀 Geplante Features (Priorität 1)
-- [ ] **Smart-Prompt-Generator 🤖**
+- [x] **Smart-Prompt-Generator 🤖**
   - Button "🤖 Prompt für KI kopieren" unter jede Aufgabe.
   - Generiert optimierte Instruktionen inkl. Operatoren, AFB-Level und Aufgabentext für ChatGPT/Claude/Gemini.
   - Ziel: KI-Unterstützung ohne API-Kosten und Sicherheitsrisiken.
