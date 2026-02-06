@@ -513,7 +513,8 @@
                 // Volltextsuche
                 const matchesSearch = !searchTerm ||
                     aufgabe.volltext.toLowerCase().includes(searchTerm) ||
-                    aufgabe.semester.toLowerCase().includes(searchTerm);
+                    aufgabe.semester.toLowerCase().includes(searchTerm) ||
+                    (aufgabe.stichpunkte && aufgabe.stichpunkte.toLowerCase().includes(searchTerm));
 
                 // Semester-Filter
                 const matchesSemester = !semesterFilter || aufgabe.semester === semesterFilter;

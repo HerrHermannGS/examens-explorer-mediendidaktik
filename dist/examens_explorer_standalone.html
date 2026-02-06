@@ -3938,7 +3938,8 @@
             filteredAufgaben = aufgaben.filter(aufgabe => {
                 const matchSearch = !search ||
                     aufgabe.volltext.toLowerCase().includes(search) ||
-                    aufgabe.semester.toLowerCase().includes(search);
+                    aufgabe.semester.toLowerCase().includes(search) ||
+                    (aufgabe.stichpunkte && aufgabe.stichpunkte.toLowerCase().includes(search));
 
                 const matchSemester = !semester || aufgabe.semester === semester;
 
