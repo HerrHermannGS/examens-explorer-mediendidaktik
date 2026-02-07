@@ -4298,12 +4298,36 @@ Die Antwort soll wissenschaftlich fundiert und präzise auf die bayerischen Staa
             console.log('📝 Operatoren zum Highlighten:', operatoren.length, operatoren.map(o => o.text));
 
             operatoren.forEach(op => {
-                // Escape Sonderzeichen für Regex
-                const escapedText = op.text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-                // Verwende flexible Regex ohne \b für mehrteilige Operatoren
-                const regex = new RegExp(`(${escapedText})`, 'gi');
-                const replacement = `<span class="operator-highlight afb-${op.afb}" title="AFB ${op.afb}: ${op.textform} | ${op.bezug}">$1</span>`;
-                highlightedText = highlightedText.replace(regex, replacement);
+                // Trennbare Verben erkennen (z.B. "Stellen sie dar" → "Stellen Sie ... dar")
+                const trennbareVerben = {
+                    'stellen sie dar': ['stellen', 'dar'],
+                    'stellen sie gegenüber': ['stellen', 'gegenüber'],
+                    'zeigen sie auf': ['zeigen', 'auf'],
+                    'zeigen sie auf,': ['zeigen', 'auf'],
+                    'legen sie dar': ['legen', 'dar'],
+                    'leiten sie ab': ['leiten', 'ab'],
+                    'setzen sie sich auseinander': ['setzen', 'auseinander'],
+                    'setzen sie auseinander': ['setzen', 'auseinander']
+                };
+
+                const opLower = op.text.toLowerCase().trim();
+                const trennbar = trennbareVerben[opLower];
+
+                if (trennbar) {
+                    // Trennbares Verb: Markiere Präfix und Partikel separat
+                    const [prefix, partikel] = trennbar;
+                    const regexPrefix = new RegExp(`(${prefix}(?:n|)\\s+(?:Sie|sie))`, 'gi');
+                    const regexPartikel = new RegExp(`\\b(${partikel})[\\b!.,;]`, 'gi');
+                    const title = `AFB ${op.afb}: ${op.textform} | ${op.bezug}`;
+                    highlightedText = highlightedText.replace(regexPrefix, `<span class="operator-highlight afb-${op.afb}" title="${title}">$1</span>`);
+                    highlightedText = highlightedText.replace(regexPartikel, `<span class="operator-highlight afb-${op.afb}" title="${title}">$1</span>`);
+                } else {
+                    // Normaler Operator: exakter Match
+                    const escapedText = op.text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                    const regex = new RegExp(`(${escapedText})`, 'gi');
+                    const replacement = `<span class="operator-highlight afb-${op.afb}" title="AFB ${op.afb}: ${op.textform} | ${op.bezug}">$1</span>`;
+                    highlightedText = highlightedText.replace(regex, replacement);
+                }
             });
 
             volltextDiv.innerHTML = highlightedText;
