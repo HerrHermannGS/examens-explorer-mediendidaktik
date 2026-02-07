@@ -199,13 +199,14 @@ def build_standalone_html_with_operators():
             margin-bottom: 10px;
         }}
         .card-stichpunkte {{
-            font-size: 0.9rem;
-            color: #666;
+            font-size: 1.05rem;
+            color: #444;
             font-style: italic;
             margin-bottom: 12px;
-            padding: 8px 12px;
-            background: #f8f9fa;
-            border-radius: 4px;
+            padding: 10px 14px;
+            background: #f0f4f8;
+            border-radius: 6px;
+            border-left: 3px solid var(--primary);
         }}
         body.dark-mode .card-stichpunkte {{
             background: #2d2d2d;
@@ -559,7 +560,7 @@ def build_standalone_html_with_operators():
     <header>
         <div class="container">
             <h1>📚 Examens-Explorer Mediendidaktik</h1>
-            <p>Durchsuche 40 Examensaufgaben (2015-2025) mit Operator-Highlighting 🔍</p>
+            <p>Durchsuche 40 Examensaufgaben (2015-2025) 🔍</p>
         </div>
     </header>
 
@@ -569,13 +570,6 @@ def build_standalone_html_with_operators():
                 <input type="text" id="searchInput" placeholder="🔎 Volltextsuche..." />
                 <select id="semesterFilter">
                     <option value="">Alle Semester</option>
-                </select>
-<select id="kategorieFilter">
-                    <option value="">Alle Kategorien</option>
-                    <option value="Mediendidaktische Konzepte">Mediendidaktische Konzepte</option>
-                    <option value="Lehr-Lerntheorien">Lehr-Lerntheorien</option>
-                    <option value="Lernpsychologie">Lernpsychologie</option>
-                    <option value="Spezifische Medien/Formate">Spezifische Medien/Formate</option>
                 </select>
                 <select id="themaFilter">
                     <option value="">Alle Themen/Schlüsselwörter</option>
@@ -674,18 +668,14 @@ def build_standalone_html_with_operators():
             populateThemaFilter();
         }}
 
-        function populateThemaFilter(selectedKategorie) {{
+        function populateThemaFilter() {{
             const themaFilter = document.getElementById('themaFilter');
             const currentValue = themaFilter.value;
             themaFilter.innerHTML = '<option value="">Alle Themen/Schlüsselwörter</option>';
 
             const themenSet = new Set();
             aufgaben.forEach(aufgabe => {{
-                Object.entries(aufgabe.themen).forEach(([kategorie, themen]) => {{
-                    if (!selectedKategorie || kategorie === selectedKategorie) {{
-                        themen.forEach(t => themenSet.add(t));
-                    }}
-                }});
+                Object.values(aufgabe.themen).forEach(themen => {{ themen.forEach(t => themenSet.add(t)); }});
             }});
 
             [...themenSet].sort((a, b) => a.localeCompare(b, 'de')).forEach(thema => {{
@@ -703,10 +693,6 @@ def build_standalone_html_with_operators():
         function attachEventListeners() {{
             document.getElementById('searchInput').addEventListener('input', filterResults);
             document.getElementById('semesterFilter').addEventListener('change', filterResults);
-            document.getElementById('kategorieFilter').addEventListener('change', function() {{
-                populateThemaFilter(this.value);
-                filterResults();
-            }});
             document.getElementById('themaFilter').addEventListener('change', filterResults);
             
             document.getElementById('favFilterBtn').addEventListener('click', function() {{
@@ -800,7 +786,6 @@ Die Antwort soll wissenschaftlich fundiert und präzise auf die bayerischen Staa
         function filterResults() {{
             const search = document.getElementById('searchInput').value.toLowerCase();
             const semester = document.getElementById('semesterFilter').value;
-            const kategorie = document.getElementById('kategorieFilter').value;
             const thema = document.getElementById('themaFilter').value;
 
             filteredAufgaben = aufgaben.filter(aufgabe => {{
@@ -815,15 +800,12 @@ Die Antwort soll wissenschaftlich fundiert und präzise auf die bayerischen Staa
 
                 const matchSemester = !semester || aufgabe.semester === semester;
 
-                const matchKategorie = !kategorie ||
-                    (aufgabe.themen[kategorie] && aufgabe.themen[kategorie].length > 0);
-
                 const matchThema = !thema ||
                     Object.values(aufgabe.themen).some(themen => themen.includes(thema));
 
                 const matchFav = !showFavoritesOnly || favorites.has(aufgabe.id);
 
-                return matchSearch && matchSemester && matchKategorie && matchThema && matchFav;
+                return matchSearch && matchSemester && matchThema && matchFav;
             }});
 
             renderResults();
@@ -833,7 +815,6 @@ Die Antwort soll wissenschaftlich fundiert und präzise auf die bayerischen Staa
         function resetFilters() {{
             document.getElementById('searchInput').value = '';
             document.getElementById('semesterFilter').value = '';
-            document.getElementById('kategorieFilter').value = '';
             document.getElementById('themaFilter').value = '';
             populateThemaFilter();
 
@@ -984,8 +965,6 @@ Die Antwort soll wissenschaftlich fundiert und präzise auf die bayerischen Staa
                             ${{kategorieTags.join(' ')}}
                         </div>
                     ` : ''}}
-
-                    ${{citations}}
 
                     <button class="toggle-btn" data-card-id="${{aufgabe.id}}">▼ Volltext anzeigen</button>
                     <button class="operator-toggle-btn" data-card-id="${{aufgabe.id}}">🔍 Operatoren markieren</button>
