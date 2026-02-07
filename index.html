@@ -528,8 +528,14 @@
 <body>
     <header>
         <div class="container">
-            <h1>📚 Examens-Explorer Mediendidaktik</h1>
-            <p>Durchsuche 40 Examensaufgaben (2015-2025) 🔍</p>
+            <h1>📚 Examens-Explorer</h1>
+            <div style="display: flex; justify-content: center; gap: 10px; margin-top: 10px; align-items: center;">
+                <select id="bereichToggle" style="padding: 8px 16px; border-radius: 20px; border: 2px solid white; background: rgba(255,255,255,0.2); color: white; font-size: 1rem; cursor: pointer; font-weight: bold;">
+                    <option value="mediendidaktik" style="color: black;">Mediendidaktik</option>
+                    <option value="medienerziehung" style="color: black;">Medienerziehung</option>
+                </select>
+            </div>
+            <p id="headerSubtitle">Durchsuche 40 Examensaufgaben (2015-2025) 🔍</p>
         </div>
     </header>
 
@@ -570,7 +576,7 @@
 
     <script>
         // Eingebettete Daten
-        const aufgaben = [
+        const aufgabenMediendidaktik = [
   {
     "id": "Frühjahr_2015_T1",
     "semester": "Frühjahr 2015",
@@ -1847,6 +1853,523 @@
     "stichpunkte": "Medien; Definition problembasierten Lernens; Merkmale im; Unterricht mit Medien; Chancen und; Herausforderungen; emp. Nachweise"
   }
 ];
+
+        const aufgabenMedienerziehung = [
+  {
+    "id": "ME_Frühjahr_2018_T1",
+    "semester": "Frühjahr 2018",
+    "thema_nr": 1,
+    "titel": "Jugendmedienschutz im Web 2.0",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": ["Jugendmedienschutz", "Bewahrpädagogik"],
+      "Kompetenzen & Bildung": [],
+      "Risiken & Problemfelder": [],
+      "Medienphänomene & Praxis": ["Prävention"]
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Aufgaben des Jugendmedienschutzes und pädagogische Leitgedanken.\n\n2. Probleme des Jugendmedienschutzes aus empirischer und medienpädagogischer Sicht.\n\n3. Entwurf eines präventiven medienerzieherischen Projekts.",
+    "stichpunkte": "Jugendmedienschutz; Web 2.0; pädagogische Leitgedanken; empirische Befunde; präventives Projekt"
+  },
+  {
+    "id": "ME_Frühjahr_2018_T2",
+    "semester": "Frühjahr 2018",
+    "thema_nr": 2,
+    "titel": "Nachrichtenkompetenz",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": ["Medienkompetenz"],
+      "Kompetenzen & Bildung": ["Nachrichtenkompetenz"],
+      "Risiken & Problemfelder": [],
+      "Medienphänomene & Praxis": ["Mediensozialisation"]
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Begriff und Rolle der Nachrichtenkompetenz in der Mediensozialisation.\n\n2. Einordnung in Medienkompetenzmodelle.\n\n3. Praxisbeispiel zur Vermittlung in verschiedenen Jahrgangsstufen.",
+    "stichpunkte": "Nachrichtenkompetenz; Mediensozialisation; Medienkompetenzmodelle; Praxisbeispiel; Jahrgangsstufen"
+  },
+  {
+    "id": "ME_Herbst_2018_T1",
+    "semester": "Herbst 2018",
+    "thema_nr": 1,
+    "titel": "Chancenorientierte Medienerziehung",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": ["Medienerziehung", "Mediatisierung"],
+      "Kompetenzen & Bildung": [],
+      "Risiken & Problemfelder": [],
+      "Medienphänomene & Praxis": ["Digitalisierung"]
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Vergleich: Prävention/Kompensation vs. Sozialisationschance.\n\n2. Chancen durch Mediatisierung und Digitalisierung sowie spezifische Erziehungsziele.\n\n3. Unterrichtskonzept zur Ressourcenförderung.",
+    "stichpunkte": "Prävention vs. Sozialisationschance; Mediatisierung; Digitalisierung; Erziehungsziele; Ressourcenförderung"
+  },
+  {
+    "id": "ME_Herbst_2018_T2",
+    "semester": "Herbst 2018",
+    "thema_nr": 2,
+    "titel": "Social Media (FOMO)",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": [],
+      "Kompetenzen & Bildung": [],
+      "Risiken & Problemfelder": ["FOMO", "Social Media"],
+      "Medienphänomene & Praxis": ["Social Media"]
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Einfluss digitaler Kommunikation auf den Entwicklungsprozess.\n\n2. Chancen und Risiken aktueller Social-Media-Formate sowie Reflexionsaspekte.\n\n3. Medienerzieherisches Konzept zum Thema „FOMO".",
+    "stichpunkte": "FOMO; Social Media; digitale Kommunikation; Entwicklungsprozess; Chancen & Risiken"
+  },
+  {
+    "id": "ME_Frühjahr_2019_T1",
+    "semester": "Frühjahr 2019",
+    "thema_nr": 1,
+    "titel": "Medienbezogene Kompetenzen / Fake News",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": ["Medienkompetenz"],
+      "Kompetenzen & Bildung": ["Kritische Kompetenz"],
+      "Risiken & Problemfelder": ["Fake News"],
+      "Medienphänomene & Praxis": []
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Fake News, Wissensvalidierung und Herausforderungen für die Medienerziehung.\n\n2. Kompetenzanforderungen und Weiterentwicklung von Modellen.\n\n3. Unterrichtsentwurf zur Kompetenzvermittlung.",
+    "stichpunkte": "Fake News; Wissensvalidierung; Kompetenzmodelle; Medienerziehung; Unterrichtsentwurf"
+  },
+  {
+    "id": "ME_Frühjahr_2019_T2",
+    "semester": "Frühjahr 2019",
+    "thema_nr": 2,
+    "titel": "Digital Divide",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": ["Mediatisierung"],
+      "Kompetenzen & Bildung": [],
+      "Risiken & Problemfelder": ["Digital Divide"],
+      "Medienphänomene & Praxis": ["Mediensozialisation"]
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Theorie des Digital Divide und Folgen für die Sozialisation.\n\n2. Bedeutung, Chancen und Grenzen der Schule als Sozialisationsinstanz.\n\n3. Gesellschaftliche Spaltung durch Mediatisierung und schulische Gegenmaßnahmen.",
+    "stichpunkte": "Digital Divide; Sozialisation; Schule als Sozialisationsinstanz; Mediatisierung; gesellschaftliche Spaltung"
+  },
+  {
+    "id": "ME_Herbst_2019_T1",
+    "semester": "Herbst 2019",
+    "thema_nr": 1,
+    "titel": "Informationskompetenz 2.0",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": [],
+      "Kompetenzen & Bildung": ["Informationskompetenz"],
+      "Risiken & Problemfelder": [],
+      "Medienphänomene & Praxis": ["Digitale Informationsquellen"]
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Begriff, Relevanz und empirische Befunde zur Informationskompetenz.\n\n2. Chancen/Risiken digitaler Informationsquellen und Erziehungsziele.\n\n3. Unterrichtsentwurf zur Förderung der Informationskompetenz.",
+    "stichpunkte": "Informationskompetenz; empirische Befunde; digitale Informationsquellen; Erziehungsziele; Unterrichtsentwurf"
+  },
+  {
+    "id": "ME_Herbst_2019_T2",
+    "semester": "Herbst 2019",
+    "thema_nr": 2,
+    "titel": "Identitätsentwicklung durch Medien",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": ["Medienkompetenz"],
+      "Kompetenzen & Bildung": [],
+      "Risiken & Problemfelder": [],
+      "Medienphänomene & Praxis": ["Mediensozialisation"]
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Einfluss von Medien und privatem Konsum auf die Identität.\n\n2. Schulischer Beitrag zur Identitätsentwicklung unter Bezug auf Kompetenzmodelle.\n\n3. Unterrichtsprojekt zur Identitätsförderung und deren Grenzen.",
+    "stichpunkte": "Identitätsentwicklung; Medienkonsum; Kompetenzmodelle; Identitätsförderung; Chancen & Grenzen"
+  },
+  {
+    "id": "ME_Frühjahr_2020_T1",
+    "semester": "Frühjahr 2020",
+    "thema_nr": 1,
+    "titel": "Influencer",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": [],
+      "Kompetenzen & Bildung": ["Kritische Kompetenz", "Medienkritikfähigkeit"],
+      "Risiken & Problemfelder": ["Kommerzialisierung"],
+      "Medienphänomene & Praxis": ["Influencer", "Social Media"]
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Wirkmechanismen (Agenda-Setting, Framing) von Influencern.\n\n2. Einfluss auf die Identitätsentwicklung.\n\n3. Lehreinheit zur Medienkritikfähigkeit.",
+    "stichpunkte": "Influencer; Agenda-Setting; Framing; Identitätsentwicklung; Medienkritikfähigkeit"
+  },
+  {
+    "id": "ME_Frühjahr_2020_T2",
+    "semester": "Frühjahr 2020",
+    "thema_nr": 2,
+    "titel": "Soziale Medien (Dilemma-Nutzung)",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": ["Medienerziehung"],
+      "Kompetenzen & Bildung": [],
+      "Risiken & Problemfelder": ["Social Media"],
+      "Medienphänomene & Praxis": ["Social Media", "Mediensozialisation"]
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Rolle und Funktionen sozialer Medien in der Sozialisation.\n\n2. Ansatzpunkte einer „realistischen" schulischen Medienerziehung.\n\n3. Unterrichtsvorhaben zum sicheren Umgang und Strategievermittlung.",
+    "stichpunkte": "Soziale Medien; Sozialisation; schulische Medienerziehung; sicherer Umgang; Strategievermittlung"
+  },
+  {
+    "id": "ME_Herbst_2020_T1",
+    "semester": "Herbst 2020",
+    "thema_nr": 1,
+    "titel": "Medienbildung und informatische Bildung",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": ["Medienkompetenz", "Medienbildung"],
+      "Kompetenzen & Bildung": ["Informatische Bildung"],
+      "Risiken & Problemfelder": [],
+      "Medienphänomene & Praxis": []
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Definition/Unterscheidung: Medienkompetenz, Medienbildung, digitale und informatische Bildung.\n\n2. Bedeutung von algorithmischem Denken und interdisziplinäre Förderung.\n\n3. Verknüpfendes Unterrichtsvorhaben beider Bildungsbereiche.",
+    "stichpunkte": "Medienkompetenz vs. Medienbildung; informatische Bildung; algorithmisches Denken; interdisziplinäre Förderung"
+  },
+  {
+    "id": "ME_Herbst_2020_T2",
+    "semester": "Herbst 2020",
+    "thema_nr": 2,
+    "titel": "Digitale Souveränität",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": ["Medienkompetenz"],
+      "Kompetenzen & Bildung": ["Digitale Souveränität"],
+      "Risiken & Problemfelder": ["Datenschutz"],
+      "Medienphänomene & Praxis": []
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Verhältnis von Medienkompetenz und digitaler Souveränität.\n\n2. Schulischer Beitrag zur Souveränität und dessen Grenzen.\n\n3. Unterrichtsvorhaben zur Datensouveränität.",
+    "stichpunkte": "Digitale Souveränität; Medienkompetenz; Datensouveränität; Chancen & Grenzen; Unterrichtsvorhaben"
+  },
+  {
+    "id": "ME_Frühjahr_2021_T1",
+    "semester": "Frühjahr 2021",
+    "thema_nr": 1,
+    "titel": "FOMO – Fear of Missing Out",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": [],
+      "Kompetenzen & Bildung": [],
+      "Risiken & Problemfelder": ["FOMO", "Mediensucht"],
+      "Medienphänomene & Praxis": ["Social Media"]
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Phänomenbeschreibung und Ursachen bei Heranwachsenden.\n\n2. Zu vermittelnde Kompetenzen und Grenzen der Schule.\n\n3. Unterrichtsvorhaben zur verantwortungsvollen Mediennutzung.",
+    "stichpunkte": "FOMO; Heranwachsende; Kompetenzvermittlung; Grenzen der Schule; verantwortungsvolle Mediennutzung"
+  },
+  {
+    "id": "ME_Frühjahr_2021_T2",
+    "semester": "Frühjahr 2021",
+    "thema_nr": 2,
+    "titel": "Manipulative Strategien",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": [],
+      "Kompetenzen & Bildung": ["Digitale Souveränität", "Kritische Kompetenz"],
+      "Risiken & Problemfelder": ["Dark Patterns", "Kommerzialisierung"],
+      "Medienphänomene & Praxis": []
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Strategien zur Einstellungs- und Verhaltensbeeinflussung.\n\n2. Betroffenheit Jugendlicher und notwendige Souveränitätskompetenzen.\n\n3. Unterrichtsvorhaben zum Erkennen von Manipulation.",
+    "stichpunkte": "Manipulation; Verhaltensbeeinflussung; Souveränitätskompetenzen; Jugendliche; Erkennen von Manipulation"
+  },
+  {
+    "id": "ME_Herbst_2021_T1",
+    "semester": "Herbst 2021",
+    "thema_nr": 1,
+    "titel": "Iconic Turn / Bildmedien",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": [],
+      "Kompetenzen & Bildung": ["Visual Literacy"],
+      "Risiken & Problemfelder": ["Bildmanipulation"],
+      "Medienphänomene & Praxis": ["Mediensozialisation"]
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Rolle statischer und bewegter Bilder in der Sozialisation.\n\n2. Integration von „Visual Literacy" in Kompetenzmodelle.\n\n3. Unterrichtsvorhaben zum Umgang mit Bildmanipulation.",
+    "stichpunkte": "Iconic Turn; Bildmedien; Visual Literacy; Bildmanipulation; Kompetenzmodelle"
+  },
+  {
+    "id": "ME_Herbst_2021_T2",
+    "semester": "Herbst 2021",
+    "thema_nr": 2,
+    "titel": "Gewalt und Medien",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": [],
+      "Kompetenzen & Bildung": [],
+      "Risiken & Problemfelder": ["Gewalt", "Mediensucht"],
+      "Medienphänomene & Praxis": ["Prävention"]
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Gewaltdarstellungen, Konsummotive und Wirkmechanismen.\n\n2. Einflussfaktoren der Gewaltwirkung und schulische Befähigung.\n\n3. Unterrichtsvorhaben zur Sensibilisierung und Handlungsfähigkeit.",
+    "stichpunkte": "Gewalt in Medien; Konsummotive; Wirkmechanismen; Einflussfaktoren; Sensibilisierung"
+  },
+  {
+    "id": "ME_Frühjahr_2022_T1",
+    "semester": "Frühjahr 2022",
+    "thema_nr": 1,
+    "titel": "Werteorientierte Medienerziehung",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": ["Medienerziehung"],
+      "Kompetenzen & Bildung": ["Werteorientierung"],
+      "Risiken & Problemfelder": ["Geschlechterstereotype"],
+      "Medienphänomene & Praxis": []
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Werteorientierung im Bildungsbegriff vs. Wissen/Kompetenz.\n\n2. Herausforderungen durch Geschlechterstereotype und medienbezogene Ziele.\n\n3. Unterrichtsvorhaben zur Unterstützung der Wertebildung.",
+    "stichpunkte": "Werteorientierung; Bildungsbegriff; Geschlechterstereotype; medienbezogene Ziele; Wertebildung"
+  },
+  {
+    "id": "ME_Frühjahr_2022_T2",
+    "semester": "Frühjahr 2022",
+    "thema_nr": 2,
+    "titel": "Pay-to-win-Spiele",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": [],
+      "Kompetenzen & Bildung": ["Kritische Kompetenz"],
+      "Risiken & Problemfelder": ["Kommerzialisierung", "Dark Patterns"],
+      "Medienphänomene & Praxis": ["Gaming"]
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Mechanismen zur Förderung von In-Game-Käufen.\n\n2. Schulischer Beitrag zur verantwortungsvollen Spielnutzung und Grenzen.\n\n3. Unterrichtsvorhaben zum Umgang mit In-Game-Käufen.",
+    "stichpunkte": "Pay-to-win; In-Game-Käufe; Spielmechanismen; verantwortungsvolle Nutzung; Kommerzialisierung"
+  },
+  {
+    "id": "ME_Herbst_2022_T1",
+    "semester": "Herbst 2022",
+    "thema_nr": 1,
+    "titel": "Lehrerkompetenzen / Cybermobbing",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": ["Medienkompetenz"],
+      "Kompetenzen & Bildung": ["Lehrerkompetenzen"],
+      "Risiken & Problemfelder": ["Cybermobbing"],
+      "Medienphänomene & Praxis": ["Prävention"]
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Modell medienbezogener Lehrerkompetenzen.\n\n2. Erforderliche Kompetenzen zur Behandlung von Cybermobbing.\n\n3. Konzept für eine Lehrkräftefortbildung zur Prävention.",
+    "stichpunkte": "Lehrerkompetenzen; Cybermobbing; Fortbildung; Prävention; medienbezogene Kompetenzen"
+  },
+  {
+    "id": "ME_Herbst_2022_T2",
+    "semester": "Herbst 2022",
+    "thema_nr": 2,
+    "titel": "Geschlechterdarstellungen",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": [],
+      "Kompetenzen & Bildung": [],
+      "Risiken & Problemfelder": ["Geschlechterstereotype"],
+      "Medienphänomene & Praxis": ["Mediensozialisation"]
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Wirkung von Geschlechterstereotypen auf Heranwachsende.\n\n2. Schulischer Beitrag zur Akzeptanz und zum Respekt der Geschlechtlichkeit.\n\n3. Unterrichtsvorhaben zur Auseinandersetzung mit medialen Darstellungen.",
+    "stichpunkte": "Geschlechterstereotype; Heranwachsende; Akzeptanz; mediale Darstellungen; Unterrichtsvorhaben"
+  },
+  {
+    "id": "ME_Frühjahr_2023_T1",
+    "semester": "Frühjahr 2023",
+    "thema_nr": 1,
+    "titel": "Kultur der Digitalität",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": ["Mediatisierung"],
+      "Kompetenzen & Bildung": [],
+      "Risiken & Problemfelder": [],
+      "Medienphänomene & Praxis": ["Digitalisierung", "Digitale Kommunikation"]
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Zentrale Veränderungen in der Lebenswelt durch Digitalisierung.\n\n2. Unterstützung Lernender durch schulische Medienerziehung.\n\n3. Unterrichtsvorhaben zur digitalen Kommunikation.",
+    "stichpunkte": "Kultur der Digitalität; Lebenswelt; Digitalisierung; schulische Medienerziehung; digitale Kommunikation"
+  },
+  {
+    "id": "ME_Frühjahr_2023_T2",
+    "semester": "Frühjahr 2023",
+    "thema_nr": 2,
+    "titel": "Exzessiver Medienkonsum / Mediensucht",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": [],
+      "Kompetenzen & Bildung": [],
+      "Risiken & Problemfelder": ["Mediensucht", "Suchtspiralen"],
+      "Medienphänomene & Praxis": ["Prävention"]
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Definitionen und Entwicklung während der COVID-19-Pandemie.\n\n2. Negative Konsequenzen und medienerzieherische Gegenmaßnahmen.\n\n3. Präventives Unterrichtsvorhaben.",
+    "stichpunkte": "Mediensucht; exzessiver Konsum; COVID-19; Prävention; medienerzieherische Gegenmaßnahmen"
+  },
+  {
+    "id": "ME_Herbst_2023_T1",
+    "semester": "Herbst 2023",
+    "thema_nr": 1,
+    "titel": "Digitale Werbung",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": [],
+      "Kompetenzen & Bildung": ["Kritische Kompetenz"],
+      "Risiken & Problemfelder": ["Kommerzialisierung", "Dark Patterns"],
+      "Medienphänomene & Praxis": ["Social Media"]
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Werbeformen und deren Auswirkungen auf die Sozialisation.\n\n2. Kompetenzbedarf zum Umgang mit digitaler Werbung.\n\n3. Unterrichtsvorhaben zum Kompetenzerwerb.",
+    "stichpunkte": "Digitale Werbung; Werbeformen; Sozialisation; Kompetenzbedarf; Kompetenzerwerb"
+  },
+  {
+    "id": "ME_Herbst_2023_T2",
+    "semester": "Herbst 2023",
+    "thema_nr": 2,
+    "titel": "Fake News und Demokratie",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": [],
+      "Kompetenzen & Bildung": ["Kritische Kompetenz", "Digitale Souveränität"],
+      "Risiken & Problemfelder": ["Fake News"],
+      "Medienphänomene & Praxis": []
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Bedrohung demokratischer Prozesse durch Fake News.\n\n2. Vermittlung digitalitätsbezogener Kompetenzen im schulischen Kontext.\n\n3. Unterrichtsvorhaben zur Mitgestaltung der digitalen Gesellschaft.",
+    "stichpunkte": "Fake News; Demokratie; digitalitätsbezogene Kompetenzen; digitale Gesellschaft; Mitgestaltung"
+  },
+  {
+    "id": "ME_Frühjahr_2024_T1",
+    "semester": "Frühjahr 2024",
+    "thema_nr": 1,
+    "titel": "Recherche- und Informationskompetenz",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": [],
+      "Kompetenzen & Bildung": ["Informationskompetenz"],
+      "Risiken & Problemfelder": [],
+      "Medienphänomene & Praxis": []
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Relevanz und medienpädagogische Fundierung.\n\n2. Verankerung in Modellen und Beispiele schulischer Förderung.\n\n3. Skizzierung eines konkreten Unterrichtsvorhabens.",
+    "stichpunkte": "Recherchekompetenz; Informationskompetenz; medienpädagogische Fundierung; schulische Förderung; Unterrichtsvorhaben"
+  },
+  {
+    "id": "ME_Frühjahr_2024_T2",
+    "semester": "Frühjahr 2024",
+    "thema_nr": 2,
+    "titel": "Kinder- und Jugendmedienschutz",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": ["Jugendmedienschutz", "Bewahrpädagogik"],
+      "Kompetenzen & Bildung": [],
+      "Risiken & Problemfelder": [],
+      "Medienphänomene & Praxis": ["Prävention"]
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Ziele, Aufgaben, Kennzeichnungen sowie institutionelle Grenzen.\n\n2. Alternative Ansätze zur Auseinandersetzung mit Problem-Inhalten.\n\n3. Unterrichtsvorhaben zur Sinnhaftigkeit von Altersfreigaben.",
+    "stichpunkte": "Jugendmedienschutz; Altersfreigaben; USK; FSK; institutionelle Grenzen; alternative Ansätze"
+  },
+  {
+    "id": "ME_Herbst_2024_T1",
+    "semester": "Herbst 2024",
+    "thema_nr": 1,
+    "titel": "Reflektiert „fernsehen" (Streaming)",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": [],
+      "Kompetenzen & Bildung": ["Kritische Kompetenz"],
+      "Risiken & Problemfelder": ["Mediensucht"],
+      "Medienphänomene & Praxis": ["Streaming"]
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Merkmale und Konsum von Streamingangeboten.\n\n2. Chancen und Risiken für Entwicklungsaufgaben.\n\n3. Unterrichtsvorhaben zum reflektierten Umgang.",
+    "stichpunkte": "Streaming; Fernsehen; Entwicklungsaufgaben; Chancen & Risiken; reflektierter Umgang"
+  },
+  {
+    "id": "ME_Herbst_2024_T2",
+    "semester": "Herbst 2024",
+    "thema_nr": 2,
+    "titel": "Instant Messenger",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": [],
+      "Kompetenzen & Bildung": [],
+      "Risiken & Problemfelder": ["Cybermobbing", "Datenschutz"],
+      "Medienphänomene & Praxis": ["Smartphone", "Social Media"]
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Funktionen und altersspezifisches Nutzungsverhalten.\n\n2. Schulung von Fähigkeiten zur Risikominderung.\n\n3. Präventives Unterrichtsvorhaben zum Umgang.",
+    "stichpunkte": "Instant Messenger; Nutzungsverhalten; Risikominderung; Prävention; altersgerecht"
+  },
+  {
+    "id": "ME_Frühjahr_2025_T1",
+    "semester": "Frühjahr 2025",
+    "thema_nr": 1,
+    "titel": "Selbstdarstellung im Netz",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": [],
+      "Kompetenzen & Bildung": ["Kritische Kompetenz"],
+      "Risiken & Problemfelder": [],
+      "Medienphänomene & Praxis": ["Social Media", "Mediensozialisation"]
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Entwicklung der Selbstdarstellungskultur (Web 2.0/Social Media).\n\n2. Identitätsentwicklung: Herausforderungen, Chancen und Kompetenzen.\n\n3. Unterrichtsvorhaben zum medienkritischen Bewusstsein.",
+    "stichpunkte": "Selbstdarstellung; Web 2.0; Social Media; Identitätsentwicklung; medienkritisches Bewusstsein"
+  },
+  {
+    "id": "ME_Frühjahr_2025_T2",
+    "semester": "Frühjahr 2025",
+    "thema_nr": 2,
+    "titel": "Datensouveränität (Privacy Literacy)",
+    "operatoren": {"AFB I": [], "AFB II": [], "AFB III": []},
+    "themen": {
+      "Konzepte & Modelle": [],
+      "Kompetenzen & Bildung": ["Digitale Souveränität", "Privacy Literacy"],
+      "Risiken & Problemfelder": ["Datenschutz", "Datafizierung"],
+      "Medienphänomene & Praxis": []
+    },
+    "zitate": [],
+    "teilaufgaben_anzahl": 3,
+    "volltext": "1. Wichtigkeit des Privatsphärenschutzes und Beitrag der Medienerziehung.\n\n2. Kompetenzen für den verantwortungsvollen Umgang mit Daten.\n\n3. Unterrichtsvorhaben zum souveränen Umgang mit digitalen Daten.",
+    "stichpunkte": "Privacy Literacy; Datensouveränität; Privatsphärenschutz; Datafizierung; verantwortungsvoller Umgang"
+  }
+];
+
+        let currentBereich = 'mediendidaktik';
+        let aufgaben = [...aufgabenMediendidaktik];
+
         const operatorenDetailliert = [
   {
     "jahr": "2015",
@@ -3919,12 +4442,47 @@
             toggleDarkMode();
         }
 
+        function switchBereich(bereich) {
+            currentBereich = bereich;
+            if (bereich === 'medienerziehung') {
+                aufgaben = [...aufgabenMedienerziehung];
+                document.querySelector('header h1').textContent = '📚 Examens-Explorer Medienerziehung';
+                document.getElementById('headerSubtitle').textContent = 'Durchsuche 30 Examensaufgaben (2018-2025) 🔍';
+            } else {
+                aufgaben = [...aufgabenMediendidaktik];
+                document.querySelector('header h1').textContent = '📚 Examens-Explorer Mediendidaktik';
+                document.getElementById('headerSubtitle').textContent = 'Durchsuche 40 Examensaufgaben (2015-2025) 🔍';
+            }
+            // Filter zurücksetzen und neu befüllen
+            document.getElementById('searchInput').value = '';
+            document.getElementById('semesterFilter').innerHTML = '<option value="">Alle Semester</option>';
+            document.getElementById('themaFilter').innerHTML = '<option value="">Alle Themen/Schlüsselwörter</option>';
+            const semesters = [...new Set(aufgaben.map(a => a.semester))].sort();
+            const semesterFilter = document.getElementById('semesterFilter');
+            semesters.forEach(sem => {
+                const option = document.createElement('option');
+                option.value = sem;
+                option.textContent = sem;
+                semesterFilter.appendChild(option);
+            });
+            populateThemaFilter();
+            filteredAufgaben = [...aufgaben];
+            showFavoritesOnly = false;
+            document.getElementById('favFilterBtn').classList.remove('active');
+            renderResults();
+            updateStats();
+        }
+
         // Initialisierung
         document.addEventListener('DOMContentLoaded', () => {
             populateFilters();
             renderResults();
             updateStats();
             attachEventListeners();
+
+            document.getElementById('bereichToggle').addEventListener('change', function() {
+                switchBereich(this.value);
+            });
         });
 
         function populateFilters() {
@@ -4177,12 +4735,19 @@ Die Antwort soll wissenschaftlich fundiert und präzise auf die bayerischen Staa
 
         function renderCard(aufgabe) {
             const kategorieTags = [];
-            const kategorieMap = {
+            const kategorieMapDidaktik = {
                 'Mediendidaktische Konzepte': 1,
                 'Lehr-Lerntheorien': 2,
                 'Lernpsychologie': 3,
                 'Spezifische Medien/Formate': 4
             };
+            const kategorieMapErziehung = {
+                'Konzepte & Modelle': 1,
+                'Kompetenzen & Bildung': 2,
+                'Risiken & Problemfelder': 3,
+                'Medienphänomene & Praxis': 4
+            };
+            const kategorieMap = currentBereich === 'medienerziehung' ? kategorieMapErziehung : kategorieMapDidaktik;
 
             Object.entries(aufgabe.themen).forEach(([kategorie, themen]) => {
                 themen.forEach(thema => {
@@ -4298,12 +4863,36 @@ Die Antwort soll wissenschaftlich fundiert und präzise auf die bayerischen Staa
             console.log('📝 Operatoren zum Highlighten:', operatoren.length, operatoren.map(o => o.text));
 
             operatoren.forEach(op => {
-                // Escape Sonderzeichen für Regex
-                const escapedText = op.text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-                // Verwende flexible Regex ohne \b für mehrteilige Operatoren
-                const regex = new RegExp(`(${escapedText})`, 'gi');
-                const replacement = `<span class="operator-highlight afb-${op.afb}" title="AFB ${op.afb}: ${op.textform} | ${op.bezug}">$1</span>`;
-                highlightedText = highlightedText.replace(regex, replacement);
+                // Trennbare Verben erkennen (z.B. "Stellen sie dar" → "Stellen Sie ... dar")
+                const trennbareVerben = {
+                    'stellen sie dar': ['stellen', 'dar'],
+                    'stellen sie gegenüber': ['stellen', 'gegenüber'],
+                    'zeigen sie auf': ['zeigen', 'auf'],
+                    'zeigen sie auf,': ['zeigen', 'auf'],
+                    'legen sie dar': ['legen', 'dar'],
+                    'leiten sie ab': ['leiten', 'ab'],
+                    'setzen sie sich auseinander': ['setzen', 'auseinander'],
+                    'setzen sie auseinander': ['setzen', 'auseinander']
+                };
+
+                const opLower = op.text.toLowerCase().trim();
+                const trennbar = trennbareVerben[opLower];
+
+                if (trennbar) {
+                    // Trennbares Verb: Markiere Präfix und Partikel separat
+                    const [prefix, partikel] = trennbar;
+                    const regexPrefix = new RegExp(`(${prefix}(?:n|)\\s+(?:Sie|sie))`, 'gi');
+                    const regexPartikel = new RegExp(`\\b(${partikel})[\\b!.,;]`, 'gi');
+                    const title = `AFB ${op.afb}: ${op.textform} | ${op.bezug}`;
+                    highlightedText = highlightedText.replace(regexPrefix, `<span class="operator-highlight afb-${op.afb}" title="${title}">$1</span>`);
+                    highlightedText = highlightedText.replace(regexPartikel, `<span class="operator-highlight afb-${op.afb}" title="${title}">$1</span>`);
+                } else {
+                    // Normaler Operator: exakter Match
+                    const escapedText = op.text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                    const regex = new RegExp(`(${escapedText})`, 'gi');
+                    const replacement = `<span class="operator-highlight afb-${op.afb}" title="AFB ${op.afb}: ${op.textform} | ${op.bezug}">$1</span>`;
+                    highlightedText = highlightedText.replace(regex, replacement);
+                }
             });
 
             volltextDiv.innerHTML = highlightedText;
