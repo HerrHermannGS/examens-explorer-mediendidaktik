@@ -368,13 +368,7 @@
                 <select id="filterSemester">
                     <option value="">Alle Semester</option>
                 </select>
-                <select id="filterAFB">
-                    <option value="">Alle AFB-Level</option>
-                    <option value="AFB I">AFB I (Reproduktion)</option>
-                    <option value="AFB II">AFB II (Transfer)</option>
-                    <option value="AFB III">AFB III (Reflexion)</option>
-                </select>
-                <select id="filterKategorie">
+<select id="filterKategorie">
                     <option value="">Alle Kategorien</option>
                     <option value="Mediendidaktische Konzepte">Mediendidaktische Konzepte</option>
                     <option value="Lehr-Lerntheorien">Lehr-Lerntheorien</option>
@@ -517,7 +511,6 @@
         function setupEventListeners() {
             document.getElementById('searchInput').addEventListener('input', applyFilters);
             document.getElementById('filterSemester').addEventListener('change', applyFilters);
-            document.getElementById('filterAFB').addEventListener('change', applyFilters);
             document.getElementById('filterKategorie').addEventListener('change', function() {
                 populateThemaFilter(this.value);
                 applyFilters();
@@ -530,7 +523,6 @@
         function applyFilters() {
             const searchTerm = document.getElementById('searchInput').value.toLowerCase();
             const semesterFilter = document.getElementById('filterSemester').value;
-            const afbFilter = document.getElementById('filterAFB').value;
             const themaFilter = document.getElementById('filterThema').value;
 
             const kategorieFilter = document.getElementById('filterKategorie').value;
@@ -549,10 +541,6 @@
                 // Semester-Filter
                 const matchesSemester = !semesterFilter || aufgabe.semester === semesterFilter;
 
-                // AFB-Filter
-                const matchesAFB = !afbFilter ||
-                    (aufgabe.operatoren[afbFilter] && aufgabe.operatoren[afbFilter].length > 0);
-
                 // Kategorie-Filter
                 const matchesKategorie = !kategorieFilter ||
                     (aufgabe.themen[kategorieFilter] && aufgabe.themen[kategorieFilter].length > 0);
@@ -561,7 +549,7 @@
                 const matchesThema = !themaFilter ||
                     Object.values(aufgabe.themen).some(liste => liste.includes(themaFilter));
 
-                return matchesSearch && matchesSemester && matchesAFB && matchesKategorie && matchesThema;
+                return matchesSearch && matchesSemester && matchesKategorie && matchesThema;
             });
 
             renderCards();
@@ -571,7 +559,6 @@
         function resetFilters() {
             document.getElementById('searchInput').value = '';
             document.getElementById('filterSemester').value = '';
-            document.getElementById('filterAFB').value = '';
             document.getElementById('filterKategorie').value = '';
             document.getElementById('filterThema').value = '';
             populateThemaFilter();

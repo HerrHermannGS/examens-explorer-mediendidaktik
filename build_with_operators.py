@@ -570,13 +570,7 @@ def build_standalone_html_with_operators():
                 <select id="semesterFilter">
                     <option value="">Alle Semester</option>
                 </select>
-                <select id="afbFilter">
-                    <option value="">Alle AFB-Level</option>
-                    <option value="AFB I">AFB I (Reproduktion)</option>
-                    <option value="AFB II">AFB II (Transfer)</option>
-                    <option value="AFB III">AFB III (Reflexion)</option>
-                </select>
-                <select id="kategorieFilter">
+<select id="kategorieFilter">
                     <option value="">Alle Kategorien</option>
                     <option value="Mediendidaktische Konzepte">Mediendidaktische Konzepte</option>
                     <option value="Lehr-Lerntheorien">Lehr-Lerntheorien</option>
@@ -709,7 +703,6 @@ def build_standalone_html_with_operators():
         function attachEventListeners() {{
             document.getElementById('searchInput').addEventListener('input', filterResults);
             document.getElementById('semesterFilter').addEventListener('change', filterResults);
-            document.getElementById('afbFilter').addEventListener('change', filterResults);
             document.getElementById('kategorieFilter').addEventListener('change', function() {{
                 populateThemaFilter(this.value);
                 filterResults();
@@ -807,7 +800,6 @@ Die Antwort soll wissenschaftlich fundiert und präzise auf die bayerischen Staa
         function filterResults() {{
             const search = document.getElementById('searchInput').value.toLowerCase();
             const semester = document.getElementById('semesterFilter').value;
-            const afb = document.getElementById('afbFilter').value;
             const kategorie = document.getElementById('kategorieFilter').value;
             const thema = document.getElementById('themaFilter').value;
 
@@ -823,9 +815,6 @@ Die Antwort soll wissenschaftlich fundiert und präzise auf die bayerischen Staa
 
                 const matchSemester = !semester || aufgabe.semester === semester;
 
-                const matchAFB = !afb ||
-                    (aufgabe.operatoren[afb] && aufgabe.operatoren[afb].length > 0);
-
                 const matchKategorie = !kategorie ||
                     (aufgabe.themen[kategorie] && aufgabe.themen[kategorie].length > 0);
 
@@ -834,7 +823,7 @@ Die Antwort soll wissenschaftlich fundiert und präzise auf die bayerischen Staa
 
                 const matchFav = !showFavoritesOnly || favorites.has(aufgabe.id);
 
-                return matchSearch && matchSemester && matchAFB && matchKategorie && matchThema && matchFav;
+                return matchSearch && matchSemester && matchKategorie && matchThema && matchFav;
             }});
 
             renderResults();
@@ -844,7 +833,6 @@ Die Antwort soll wissenschaftlich fundiert und präzise auf die bayerischen Staa
         function resetFilters() {{
             document.getElementById('searchInput').value = '';
             document.getElementById('semesterFilter').value = '';
-            document.getElementById('afbFilter').value = '';
             document.getElementById('kategorieFilter').value = '';
             document.getElementById('themaFilter').value = '';
             populateThemaFilter();
