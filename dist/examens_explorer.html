@@ -374,6 +374,13 @@
                     <option value="AFB II">AFB II (Transfer)</option>
                     <option value="AFB III">AFB III (Reflexion)</option>
                 </select>
+                <select id="filterKategorie">
+                    <option value="">Alle Kategorien</option>
+                    <option value="Mediendidaktische Konzepte">Mediendidaktische Konzepte</option>
+                    <option value="Lehr-Lerntheorien">Lehr-Lerntheorien</option>
+                    <option value="Lernpsychologie">Lernpsychologie</option>
+                    <option value="Spezifische Medien/Formate">Spezifische Medien/Formate</option>
+                </select>
                 <select id="filterThema">
                     <option value="">Alle Themen</option>
                 </select>
@@ -478,26 +485,43 @@
                 semesterSelect.appendChild(option);
             });
 
-            // Themen-Filter (alle Themen aus allen Kategorien)
-            const allThemen = new Set();
+            populateThemaFilter();
+        }
+
+        function populateThemaFilter(selectedKategorie) {
+            const themaSelect = document.getElementById('filterThema');
+            const currentValue = themaSelect.value;
+            themaSelect.innerHTML = '<option value="">Alle Themen</option>';
+
+            const themenSet = new Set();
             aufgaben.forEach(aufgabe => {
-                Object.values(aufgabe.themen).forEach(themenListe => {
-                    themenListe.forEach(thema => allThemen.add(thema));
+                Object.entries(aufgabe.themen).forEach(([kategorie, themen]) => {
+                    if (!selectedKategorie || kategorie === selectedKategorie) {
+                        themen.forEach(t => themenSet.add(t));
+                    }
                 });
             });
-            const themaSelect = document.getElementById('filterThema');
-            [...allThemen].sort().forEach(thema => {
+
+            [...themenSet].sort((a, b) => a.localeCompare(b, 'de')).forEach(thema => {
                 const option = document.createElement('option');
                 option.value = thema;
                 option.textContent = thema;
                 themaSelect.appendChild(option);
             });
+
+            if (themenSet.has(currentValue)) {
+                themaSelect.value = currentValue;
+            }
         }
 
         function setupEventListeners() {
             document.getElementById('searchInput').addEventListener('input', applyFilters);
             document.getElementById('filterSemester').addEventListener('change', applyFilters);
             document.getElementById('filterAFB').addEventListener('change', applyFilters);
+            document.getElementById('filterKategorie').addEventListener('change', function() {
+                populateThemaFilter(this.value);
+                applyFilters();
+            });
             document.getElementById('filterThema').addEventListener('change', applyFilters);
             document.getElementById('resetBtn').addEventListener('click', resetFilters);
             document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
@@ -509,12 +533,18 @@
             const afbFilter = document.getElementById('filterAFB').value;
             const themaFilter = document.getElementById('filterThema').value;
 
+            const kategorieFilter = document.getElementById('filterKategorie').value;
+
             filteredAufgaben = aufgaben.filter(aufgabe => {
+                const alleThemen = Object.values(aufgabe.themen).flat().map(t => t.toLowerCase());
+
                 // Volltextsuche
                 const matchesSearch = !searchTerm ||
                     aufgabe.volltext.toLowerCase().includes(searchTerm) ||
                     aufgabe.semester.toLowerCase().includes(searchTerm) ||
-                    (aufgabe.stichpunkte && aufgabe.stichpunkte.toLowerCase().includes(searchTerm));
+                    (aufgabe.stichpunkte && aufgabe.stichpunkte.toLowerCase().includes(searchTerm)) ||
+                    alleThemen.some(t => t.includes(searchTerm)) ||
+                    (aufgabe.titel && aufgabe.titel.toLowerCase().includes(searchTerm));
 
                 // Semester-Filter
                 const matchesSemester = !semesterFilter || aufgabe.semester === semesterFilter;
@@ -523,11 +553,15 @@
                 const matchesAFB = !afbFilter ||
                     (aufgabe.operatoren[afbFilter] && aufgabe.operatoren[afbFilter].length > 0);
 
+                // Kategorie-Filter
+                const matchesKategorie = !kategorieFilter ||
+                    (aufgabe.themen[kategorieFilter] && aufgabe.themen[kategorieFilter].length > 0);
+
                 // Themen-Filter
                 const matchesThema = !themaFilter ||
                     Object.values(aufgabe.themen).some(liste => liste.includes(themaFilter));
 
-                return matchesSearch && matchesSemester && matchesAFB && matchesThema;
+                return matchesSearch && matchesSemester && matchesAFB && matchesKategorie && matchesThema;
             });
 
             renderCards();
@@ -538,7 +572,9 @@
             document.getElementById('searchInput').value = '';
             document.getElementById('filterSemester').value = '';
             document.getElementById('filterAFB').value = '';
+            document.getElementById('filterKategorie').value = '';
             document.getElementById('filterThema').value = '';
+            populateThemaFilter();
             applyFilters();
         }
 
