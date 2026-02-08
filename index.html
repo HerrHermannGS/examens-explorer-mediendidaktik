@@ -496,32 +496,22 @@
             color: #ccc;
         }
 
-        /* AI Prompt Button */
-        .prompt-btn {
-            background: #4f46e5;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 20px;
-            cursor: pointer;
+        /* Footer Credits */
+        .site-footer {
+            background: #1e293b;
+            color: #94a3b8;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
             font-size: 0.85rem;
-            transition: all 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
+            line-height: 1.6;
         }
-
-        .prompt-btn:hover {
-            background: #4338ca;
-            transform: translateY(-1px);
+        .site-footer a {
+            color: #60a5fa;
+            text-decoration: none;
         }
-
-        .prompt-btn:active {
-            transform: translateY(0);
-        }
-
-        .prompt-btn.copied {
-            background: #059669 !important;
+        .site-footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -4580,42 +4570,6 @@
             }
         }
 
-        function copyKIPrompt(id) {
-            const aufgabe = aufgaben.find(a => a.id === id);
-            if (!aufgabe) return;
-
-            // Operatoren Text bauen
-            let opText = "";
-            Object.entries(aufgabe.operatoren).forEach(([afb, ops]) => {
-                if (ops.length > 0) {
-                    opText += `- ${afb}: ${ops.join(', ')}\n`;
-                }
-            });
-
-            const prompt = `Du bist ein fachdidaktischer Experte für Mediendidaktik. Basierend auf der folgenden Examensaufgabe aus dem Jahr ${aufgabe.semester}, erstelle mir eine strukturierte Antwort oder eine detaillierte Gliederung.
-
-Aufgabe:
-"${aufgabe.volltext}"
-
-Berücksichtige dabei unbedingt die folgenden Operatoren und deren Anforderungsbereiche:
-${opText}
-
-Die Antwort soll wissenschaftlich fundiert und präzise auf die bayerischen Staatsexamens-Anforderungen zugeschnitten sein.`;
-
-            navigator.clipboard.writeText(prompt).then(() => {
-                const btn = document.querySelector(`.prompt-btn[data-card-id="${id}"]`);
-                if (btn) {
-                    const originalText = btn.innerHTML;
-                    btn.innerHTML = "✨ Prompt kopiert!";
-                    btn.classList.add('copied');
-                    setTimeout(() => {
-                        btn.innerHTML = originalText;
-                        btn.classList.remove('copied');
-                    }, 2000);
-                }
-            });
-        }
-
         function filterResults() {
             const search = document.getElementById('searchInput').value.toLowerCase();
             const semester = document.getElementById('semesterFilter').value;
@@ -4724,13 +4678,6 @@ Die Antwort soll wissenschaftlich fundiert und präzise auf die bayerischen Staa
                 textarea.addEventListener('input', debouncedSave);
             });
 
-            // Event Listeners für AI Prompt
-            document.querySelectorAll('.prompt-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const cardId = this.dataset.cardId;
-                    copyKIPrompt(cardId);
-                });
-            });
         }
 
         function renderCard(aufgabe) {
@@ -4803,7 +4750,6 @@ Die Antwort soll wissenschaftlich fundiert und präzise auf die bayerischen Staa
                     <button class="toggle-btn" data-card-id="${aufgabe.id}">▼ Volltext anzeigen</button>
                     <button class="operator-toggle-btn" data-card-id="${aufgabe.id}">🔍 Operatoren markieren</button>
                     <button class="note-toggle-btn ${hasNote ? 'has-note' : ''}" data-card-id="${aufgabe.id}">${hasNote ? '📝 Notizen (✓)' : '📝 Notizen'}</button>
-                    <button class="prompt-btn" data-card-id="${aufgabe.id}">🤖 Prompt kopieren</button>
                     
                     <div class="volltext" id="volltext-${aufgabe.id}">${aufgabe.volltext}</div>
                     
@@ -4907,5 +4853,10 @@ Die Antwort soll wissenschaftlich fundiert und präzise auf die bayerischen Staa
             document.getElementById('semesterCount').textContent = semesters.size;
         }
     </script>
+
+    <footer class="site-footer">
+        <p>Erstellt von <strong>HerrHermannGS</strong> | Examens-Explorer Mediendidaktik & Medienerziehung</p>
+        <p>Aufgabenquelle: <a href="https://www.medpaed.phil.fau.de/studium/erweiterungsstudiengang-medienpaedagogik/pruefung/vergangene-examensaufgaben/" target="_blank" rel="noopener">Lehrstuhl für Medienpädagogik, FAU Erlangen-Nürnberg – Vergangene Examensaufgaben</a></p>
+    </footer>
 </body>
 </html>
