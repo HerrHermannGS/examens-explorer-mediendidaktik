@@ -5331,23 +5331,44 @@
 
             const opData = operatorenMap[key];
             console.log('📋 Operator-Daten:', opData ? 'gefunden' : 'FEHLT', 'für Key:', key);
-            if (!opData) {
-                console.warn('Keine Operator-Daten gefunden für:', cardId);
-                return;
-            }
 
             // Sammle alle Operatoren mit AFB-Level
             const operatoren = [];
-            opData.teilaufgaben.forEach(teilaufgabe => {
-                teilaufgabe.operatoren.forEach(op => {
-                    operatoren.push({
-                        text: op.operator,
-                        afb: op.afb,
-                        bezug: op.bezug,
-                        textform: op.textform
+            if (opData) {
+                // Mediendidaktik: detaillierte Operator-Daten aus operatorenDetailliert
+                opData.teilaufgaben.forEach(teilaufgabe => {
+                    teilaufgabe.operatoren.forEach(op => {
+                        operatoren.push({
+                            text: op.operator,
+                            afb: op.afb,
+                            bezug: op.bezug,
+                            textform: op.textform
+                        });
                     });
                 });
-            });
+            } else {
+                // Medienerziehung (oder Fallback): Operatoren direkt aus Aufgaben-Objekt
+                const aufgabe = aufgaben.find(a => a.id === cardId);
+                if (aufgabe && aufgabe.operatoren) {
+                    const afbMap = {'AFB I': 'I', 'AFB II': 'II', 'AFB III': 'III'};
+                    Object.entries(aufgabe.operatoren).forEach(([afbKey, ops]) => {
+                        const afbLevel = afbMap[afbKey] || afbKey;
+                        ops.forEach(opText => {
+                            operatoren.push({
+                                text: opText,
+                                afb: afbLevel,
+                                bezug: '',
+                                textform: opText
+                            });
+                        });
+                    });
+                }
+            }
+
+            if (operatoren.length === 0) {
+                console.warn('Keine Operatoren gefunden für:', cardId);
+                return;
+            }
 
             // Highlighte Operatoren im Text
             let highlightedText = volltextDiv.innerHTML;
